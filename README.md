@@ -2,4 +2,19 @@
 
 ![If anyone wants to make me an icon, I'd be glad](misc/icon.png)
 
-*A TypeScript frontend to the Steam WebAPI that uses entirely too many newtypes.*
+*A TypeScript frontend to the Steam WebAPI with entirely too many newtypes.*
+
+## Supported
+
+- 
+
+## To Support
+
+- GetNewsForApp
+- GetGlobalAchievementPercentagesForApp
+- GetPlayerSummaries
+- GetFriendList
+- GetPlayerAchievements
+- GetUserStatsForGame
+- GetOwnedGames
+- GetRecentlyPlayedGames
