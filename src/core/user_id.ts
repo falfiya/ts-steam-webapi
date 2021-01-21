@@ -1,1 +1,1 @@
-export type UserId = number & {readonly _: unique symbol};
+export type user_id = number & {readonly _: unique symbol};

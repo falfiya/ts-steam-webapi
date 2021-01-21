@@ -1,1 +1,1 @@
-export type URL = string & {readonly _: unique symbol};
+export type url = string & {readonly _: unique symbol};

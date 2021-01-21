@@ -15,8 +15,7 @@ export type api_version =
    | "v1"
    | "v2"
 
-export type api_param = [key: string, val: string | number];
-
+export type api_param  = [key: string, val: string | number];
 export type api_params = api_param[];
 
 const param_to_string  = (p: api_param)   => `${p[0]}=${p[1]}`;
