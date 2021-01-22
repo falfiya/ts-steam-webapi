@@ -1,7 +1,8 @@
 import {game_id} from "./game_id";
 import {url} from "./url";
 
-export type image_id = string & {readonly _: unique symbol};
+declare const image_id: unique symbol;
+export type image_id = string & {readonly [image_id]: unique symbol};
 
 const images_dir = "steamcommunity/public/images/apps";
 

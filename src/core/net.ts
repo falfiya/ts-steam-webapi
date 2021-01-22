@@ -8,19 +8,21 @@ export type api_interface =
    | "ISteamUser"
    | "ISteamUserStats"
 
+declare const api_method: unique symbol;
 export type api_method =
-   string & {readonly _: unique symbol}
+   string & {readonly [api_method]: unique symbol}
 
 export type api_version =
    | "v1"
    | "v2"
 
-export type api_param  = [key: string, val: string | number];
-export type api_params = api_param[];
+export type api_params = {[param_name: string]: string | number};
 
-const param_to_string  = (p: api_param)   => `${p[0]}=${p[1]}`;
-const params_to_string = (ps: api_params) => ps.map(param_to_string).join('&');
+const params_to_string = (ps: api_params) =>
+   Object.entries(ps)
+      .map(([key, val]) => `${key}=${val}`)
+      .join('&');
 
 export const api_call =
-   (int: api_interface, met: api_method, ver: api_version, params: api_params = []) =>
+   (int: api_interface, met: api_method, ver: api_version, params: api_params) =>
       fetch(`https://${baseurl}/${int}/${met}/${ver}?${params_to_string(params)}`)

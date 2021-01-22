@@ -1,1 +1,2 @@
-export type url = string & {readonly _: unique symbol};
+declare const url: unique symbol;
+export type url = string & {readonly [url]: unique symbol};
