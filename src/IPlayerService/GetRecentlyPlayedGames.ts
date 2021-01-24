@@ -23,7 +23,7 @@ export async function GetRecentlyPlayedGames(key: api_key, user: user_id, count?
       IPlayerService,
       "GetRecentlyPlayedGames" as api_method,
       "v1",
-      {key},
+      {key, user, count},
    );
    return (await res.json()) as recently_played_games_response;
 }
