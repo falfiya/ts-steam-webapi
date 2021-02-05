@@ -11,6 +11,7 @@
       ],
       "target": "ES2019",
       "module": "CommonJS",
+      "esModuleInterop": true,
       "moduleResolution": "Node",
       "outDir": "bin",
       "newLine": "lf",

@@ -1,5 +1,5 @@
 import {game_id} from "./game_id";
-import {url} from "./url";
+import {url} from "../core/url";
 
 declare const image_id: unique symbol;
 export type image_id = string & {readonly [image_id]: unique symbol};

@@ -18,3 +18,9 @@
 - GetUserStatsForGame
 - GetOwnedGames
 - GetRecentlyPlayedGames
+
+## General notes
+
+The primary focus of this library is correctness, not speed.
+That's not to say that this library is slow but in situations where I feel like
+I have to make a tradeoff between the two, I will choose correctness over speed.

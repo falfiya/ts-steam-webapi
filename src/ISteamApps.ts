@@ -1,1 +1,1 @@
-export type PercentUnlocked = number & {readonly _: unique symbol};
+export type percent_unlocked = number & {readonly _: unique symbol};
