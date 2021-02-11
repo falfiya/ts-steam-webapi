@@ -25,13 +25,21 @@ export async function api_call(
    return (await res.json()).response;
 }
 
+const newline = /\n/g;
+/**
+ * Match any <pre> or </pre>
+ * Match any html tag who's innerHTML begins with another html tag or EOF
+ */
+const pre_or_useless_html_tags = /(?:<\/?pre>)|(?:<\/?\w+>(?=<|$))/g;
+const html_tags_except_first = /(?<=\/?\w+>[^>]*)<\/?\w+>/g;
+const first_tag = /^<\/?\w+>/;
+
 // https://stackoverflow.com/questions/1732348
 function render_html(html: string): string {
-   // match inner text of html tags
-   // man, this is beautiful
-   const inner_texts = html.match(/(?<=<(\w+)>)[^<]*(?=<\/\1>)/g);
-   if (inner_texts === null) {
-      return html;
-   }
-   return inner_texts.join(", ").replace(/[\s\n]+/g, ' ');
+   console.log(html);
+   return html
+      .replace(newline, "")
+      .replace(pre_or_useless_html_tags, "")
+      .replace(html_tags_except_first, ", ")
+      .replace(first_tag, "")
 }
