@@ -8,9 +8,7 @@ import {GetRecentlyPlayedGames_method} from "./method";
 import {recently_played_game} from "./recently_played_game";
 import {o_total_count} from "../o_total_count";
 
-type o_has_recently_played_games = {
-   games: recently_played_game[];
-};
+type o_has_recently_played_games = {games: recently_played_game[]};
 
 function GetRecentlyPlayedGames(this: steam_session, user: steam_id, count?: uint):
 Promise<o_total_count & o_has_recently_played_games>

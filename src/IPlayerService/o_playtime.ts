@@ -1,7 +1,6 @@
 import {minutes} from "../core/minutes";
 
 export type o_playtime = {
-   playtime_2weeks:          minutes;
    playtime_forever:         minutes;
    playtime_windows_forever: minutes;
    playtime_mac_forever:     minutes;

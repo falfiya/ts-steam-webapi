@@ -7,7 +7,5 @@ const instance = new steam_session(key);
 
 void async function main() {
    const coalpha_id = to_steam_id("76561198280673707");
-   const games = await instance.GetRecentlyPlayedGames(coalpha_id);
-   const q = games;
-   console.log(JSON.stringify(games, null, 3));
+   const {games} = await instance.GetOwnedGames(coalpha_id, {include_appinfo: true});
 }();

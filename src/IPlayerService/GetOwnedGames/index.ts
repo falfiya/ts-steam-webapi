@@ -1,49 +1,55 @@
-import {steam_session} from "../../steam_session";
+import {o_app_id} from "../o_app_id";
+import {o_playtime} from "../o_playtime";
 
+type owned_game = o_app_id & o_playtime;
+
+import {o_playtime2} from "../o_playtime2";
+import {o_name} from "../o_name";
+import {o_image_ids} from "../o_image_ids";
+import {o_stat_visibility} from "../o_stat_visibility";
+
+type owned_game_ex
+   = owned_game
+   & o_name
+   & o_playtime2
+   & o_image_ids
+   & o_stat_visibility;
+
+// function params
+import {steam_session} from "../../steam_session";
+import {steam_id} from "../../api/steam_id";
+import {GetOwnedGames_options} from "./options";
+
+// function return
+import {o_total_count} from "../o_total_count";
+import {o_has_owned_games} from "./o_has_owned_games";
+
+type response<owned_game> =
+   Promise<o_total_count & o_has_owned_games<owned_game>>;
+
+// stuff used inside the function
 import {IPlayerService} from "..";
 import {m_GetOwnedGames} from "./method";
 
-import {steam_id} from "../../api/steam_id";
-
-import {o_total_count} from "../o_total_count";
-import {o_app_id} from "../o_app_id";
-import {o_playtime} from "../o_playtime";
-import {app_id} from "../../api/app_id";
-
-export type GetOwnedGames_options = {
-   /** @default false */
-   include_appinfo?: boolean;
-   /** @default false */
-   include_played_free_games?: boolean;
-   /** @default [] */
-   appids_filter?: app_id[];
-   /** @default false */
-   include_free_sub?: boolean;
-   /** @default false */
-   skip_unvetted_apps?: boolean;
-};
-
-/** This is not actually used in here. */
-export const GetOwnedGames_options_default: GetOwnedGames_options = {
-   include_appinfo: false,
-   include_played_free_games: false,
-   appids_filter: [],
-   include_free_sub: false,
-   skip_unvetted_apps: false,
-};
-
-type o_has_owned_games<T> = {
-   games: T[];
-};
-
 function GetOwnedGames(this: steam_session, user: steam_id):
-Promise<o_total_count & o_has_owned_games<o_app_id & o_playtime>>;
+response<owned_game>;
 
-function GetOwnedGames(this: steam_session, user: steam_id, opts: GetOwnedGames_options):
-Promise<o_total_count & o_has_owned_games<o_app_id & o_playtime>>;
+function GetOwnedGames(
+   this: steam_session,
+   user: steam_id,
+   opts: GetOwnedGames_options & {include_appinfo?: false},
+):
+response<owned_game>;
+
+function GetOwnedGames(
+   this: steam_session,
+   user: steam_id,
+   opts: GetOwnedGames_options & {include_appinfo: true},
+):
+response<owned_game_ex>;
 
 function GetOwnedGames(this: steam_session, user: steam_id, opts?: GetOwnedGames_options):
-Promise<o_total_count & o_has_owned_games<o_app_id & any>>
+response<owned_game | owned_game_ex>
 {
    var params = `steamid=${user}`;
    if (opts) {
