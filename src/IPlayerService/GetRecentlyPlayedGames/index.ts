@@ -1,18 +1,26 @@
 import {steam_session} from "../../steam_session";
-import {IPlayerService} from "..";
-import {method} from "./method";
-
+import {steam_id} from "../../api/steam_id";
 import {uint} from "../../core/basetypes";
-import {user_id} from "../../api/user_id";
 
-import {recently_played_games_response} from "./response";
+import {IPlayerService} from "..";
+import {GetRecentlyPlayedGames_method} from "./method";
 
-export function GetRecentlyPlayedGames(this: steam_session, user: user_id, count?: uint):
-   Promise<recently_played_games_response> {
+import {recently_played_game} from "./recently_played_game";
+import {o_total_count} from "../o_total_count";
+
+type o_has_recently_played_games = {
+   games: recently_played_game[];
+};
+
+function GetRecentlyPlayedGames(this: steam_session, user: steam_id, count?: uint):
+Promise<o_total_count & o_has_recently_played_games>
+{
    var params = `steamid=${user}`;
    if (count !== undefined) {
       params += `&count=${count}`;
    }
 
-   return this.api_call(IPlayerService, method, "v1", params);
+   return this.api_call(IPlayerService, GetRecentlyPlayedGames_method, "v1", params);
 }
+
+export {GetRecentlyPlayedGames};

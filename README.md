@@ -2,7 +2,7 @@
 
 ![If anyone wants to make me an icon, I'd be glad](misc/icon.png)
 
-*A TypeScript frontend to the Steam WebAPI with entirely too many newtypes.*
+*A TypeScript frontend to the Steam WebAPI with just enough newtypes.*
 
 ## Supported
 

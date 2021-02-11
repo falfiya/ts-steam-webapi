@@ -8,7 +8,7 @@ import {api_version} from "./version";
 
 const host = "api.steampowered.com";
 
-export function api_call(
+export async function api_call(
    this: steam_session,
    int: api_interface,
    met: api_method,
@@ -16,9 +16,11 @@ export function api_call(
    params: string
 ) {
    const url = `https://${host}/${int}/${met}/${ver}?key=${this.key}&${params}`;
-   console.log(`API CALL: ${url}`);
-   return (
-      fetch(url)
-         .then(res => res.json())
-   );
+   const res = await fetch(url);
+   if (res.status !== 200) {
+      const err = new Error(await res.text());
+      err.name = `${res.status}, ${res.statusText}`;
+      throw err;
+   }
+   return (await res.json()).response;
 }

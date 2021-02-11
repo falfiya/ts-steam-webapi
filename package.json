@@ -1,7 +1,10 @@
 {
    "name": "@coalpha/steam-webapi",
    "scripts": {
-      "start": "mocha -r ts-node/register test/**.test.ts"
+      "start": "npm run build && npm run run",
+      "build": "tsc",
+      "run": "node bin/main",
+      "test": "mocha -r ts-node/register test/**.test.ts"
    },
    "devDependencies": {
       "@types/chai": "^4.2.14",

@@ -1,3 +1,3 @@
 import {api_method} from "../../api/method";
 
-export const method = "GetRecentlyPlayedGames" as api_method;
+export const GetRecentlyPlayedGames_method = "GetRecentlyPlayedGames" as api_method;

@@ -15,6 +15,7 @@
       "moduleResolution": "Node",
       "outDir": "bin",
       "newLine": "lf",
+      "sourceMap": true
    },
    "include": ["src/**/*.ts"]
 }

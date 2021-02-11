@@ -1,5 +1,6 @@
-import {playtime} from "../playtime";
-import {app_id} from "../app_id";
-import {image_ids} from "../image_ids";
+import {o_app_id} from "../o_app_id";
+import {o_name} from "../o_name";
+import {o_playtime} from "../o_playtime";
+import {o_image_ids} from "../o_image_ids";
 
-export type recently_played_game = playtime & app_id & image_ids;
+export type recently_played_game = o_app_id & o_name & o_playtime & o_image_ids;
