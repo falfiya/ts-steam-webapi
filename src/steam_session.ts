@@ -5,7 +5,7 @@ import {GetRecentlyPlayedGames} from "./IPlayerService/GetRecentlyPlayedGames";
 import {GetOwnedGames} from "./IPlayerService/GetOwnedGames";
 
 export class steam_session {
-   private key: api_key;
+   key: api_key;
 
    constructor (key: string) {
       this.key = to_api_key(key);

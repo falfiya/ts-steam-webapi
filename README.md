@@ -6,7 +6,9 @@
 
 ## Supported
 
-- Nothing haha
+- IPlayerService
+   - GetRecentlyPlayedGames
+   - GetOwnedGames
 
 ## To Support
 
