@@ -18,7 +18,7 @@ Promise<o_total_count & o_has_recently_played_games>
       params += `&count=${count}`;
    }
 
-   return this.api_call(IPlayerService, GetRecentlyPlayedGames_method, "v1", params);
+   return this.session_api_call(IPlayerService, GetRecentlyPlayedGames_method, "v1", params);
 }
 
 export {GetRecentlyPlayedGames};

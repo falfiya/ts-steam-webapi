@@ -11,7 +11,7 @@ Promise<o_player_level>
 {
    const params = `steamid=${user}`;
 
-   return this.api_call(IPlayerService, GetSteamLevel_method, "v1", params);
+   return this.session_api_call(IPlayerService, GetSteamLevel_method, "v1", params);
 }
 
 export {GetSteamLevel};

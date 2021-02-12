@@ -42,7 +42,7 @@ response<owned_game | owned_game_ex>
       params += opts_to_params(opts);
    }
 
-   return this.api_call(IPlayerService, m_GetOwnedGames, "v1", params);
+   return this.session_api_call(IPlayerService, m_GetOwnedGames, "v1", params);
 }
 
 export {GetOwnedGames};

@@ -1,21 +1,15 @@
 import fetch from "node-fetch";
 
-import {steam_session} from "../steam_session";
-
 import {api_interface} from "./interface";
 import {api_method} from "./method";
 import {api_version} from "./version";
 
 const host = "api.steampowered.com";
 
-export async function api_call(
-   this: steam_session,
-   int: api_interface,
-   met: api_method,
-   ver: api_version,
-   params: string
-) {
-   const url = `https://${host}/${int}/${met}/${ver}?key=${this.key}&${params}`;
+async function api_call(int: api_interface, met: api_method, ver: api_version, params: string):
+Promise<any>
+{
+   const url = `https://${host}/${int}/${met}/${ver}?${params}`;
    const res = await fetch(url);
    if (res.status !== 200) {
       const err = new Error(render_html(await res.text()));
@@ -24,6 +18,8 @@ export async function api_call(
    }
    return (await res.json()).response;
 }
+
+export {api_call};
 
 const newline = /\n/g;
 /**

@@ -19,7 +19,7 @@ Promise<o_has_quests>
       params += `&badgeid${badge_id}`;
    }
 
-   return this.api_call(IPlayerService, GetCommunityOwnedBadges_method, "v1", params);
+   return this.session_api_call(IPlayerService, GetCommunityOwnedBadges_method, "v1", params);
 }
 
 export {GetCommunityOwnedBadges};

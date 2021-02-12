@@ -9,7 +9,7 @@ Promise<any>
 {
    var params = `steamid=${user}`;
 
-   return this.api_call(ITemplateService, Template_method, "v1", params);
+   return this.session_api_call(ITemplateService, Template_method, "v1", params);
 }
 
 export {Template};

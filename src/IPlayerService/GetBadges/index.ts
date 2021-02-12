@@ -13,7 +13,7 @@ Promise<o_has_badges & o_player_xp & o_player_level>
 {
    const params = `steamid=${user}`;
 
-   return this.api_call(IPlayerService, GetBadges_method, "v1", params);
+   return this.session_api_call(IPlayerService, GetBadges_method, "v1", params);
 }
 
 export {GetBadges};
