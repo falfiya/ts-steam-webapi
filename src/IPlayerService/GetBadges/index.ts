@@ -11,7 +11,7 @@ import {GetBadges_method} from "./method";
 function GetBadges(this: steam_session, user: steam_id):
 Promise<o_has_badges & o_player_xp & o_player_level>
 {
-   var params = `steamid=${user}`;
+   const params = `steamid=${user}`;
 
    return this.api_call(IPlayerService, GetBadges_method, "v1", params);
 }

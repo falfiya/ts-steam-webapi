@@ -18,18 +18,16 @@ import {IPlayerService} from "..";
 import {m_GetOwnedGames} from "./method";
 import {opts_to_params} from "./options";
 
-function GetOwnedGames(this: steam_session, user: steam_id):
+function GetOwnedGames(user: steam_id):
 response<owned_game>;
 
 function GetOwnedGames(
-   this: steam_session,
    user: steam_id,
    opts: GetOwnedGames_options & {include_appinfo?: false},
 ):
 response<owned_game>;
 
 function GetOwnedGames(
-   this: steam_session,
    user: steam_id,
    opts: GetOwnedGames_options & {include_appinfo: true},
 ):

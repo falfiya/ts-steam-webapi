@@ -9,6 +9,10 @@
 - IPlayerService
    - GetRecentlyPlayedGames
    - GetOwnedGames
+   - GetSteamLevel
+   - GetBadges
+   - GetCommunityBadgeProgress
+   - ~~IsPlayingSharedGame~~
 
 ## To Support
 
