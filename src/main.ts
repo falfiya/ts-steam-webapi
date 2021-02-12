@@ -1,6 +1,6 @@
 import {app_id} from "./api/app_id";
 import {to_steam_id} from "./api/steam_id";
-import {steam_session, GetGlobalAchievementPercentagesForApp} from "./mod";
+import {steam_session, GetNumberOfCurrentPlayers} from "./mod";
 
 const key = require("../raw/key");
 
@@ -11,9 +11,6 @@ const celeste = 504230 as app_id;
 
 void async function main() {
    // const res = await instance.GetBadges(coalpha_id);
-   const res = await GetGlobalAchievementPercentagesForApp(celeste);
-   res.achievementpercentages.achievements.forEach(({name, percent}) => {
-      console.log("name: " + name);
-      console.log("percent: %.2f", percent);
-   })
+   const res = (await GetNumberOfCurrentPlayers(celeste)).response;
+   console.log(`Celeste Player Count: ${res.player_count}`);
 }();
