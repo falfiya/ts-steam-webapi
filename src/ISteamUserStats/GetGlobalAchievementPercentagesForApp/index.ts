@@ -1,16 +1,21 @@
-import {steam_id} from "../../api/steam_id";
+import {app_id} from "../../api/app_id";
 
 import {ISteamUserStats} from "..";
 import {GetGlobalAchievementPercentagesForApp_method} from "./method";
+import {o_has_achievement_percentages} from "./o_has_achievement_percentages";
 
 import {api_call} from "../../api/call";
 
-function GetGlobalAchievementPercentagesForApp(user: steam_id):
-Promise<any>
+function GetGlobalAchievementPercentagesForApp(game_id: app_id):
+Promise<o_has_achievement_percentages>
 {
-   var params = `steamid=${user}`;
-
-   return api_call(ISteamUserStats, GetGlobalAchievementPercentagesForApp_method, "v1", params);
+   const params = `gameid=${game_id}`;
+   return api_call(
+      ISteamUserStats,
+      GetGlobalAchievementPercentagesForApp_method,
+      "v2",
+      params
+   );
 }
 
 export {GetGlobalAchievementPercentagesForApp};

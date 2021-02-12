@@ -16,7 +16,7 @@ Promise<any>
       err.name = `${res.status}, ${res.statusText}`;
       throw err;
    }
-   return (await res.json()).response;
+   return (await res.json());
 }
 
 export {api_call};

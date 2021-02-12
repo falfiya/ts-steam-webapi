@@ -1,14 +1,15 @@
 import {api_key, to_api_key} from "./api/key";
 import {api_call} from "./api/call";
+import {api_interface} from "./api/interface";
+import {api_method} from "./api/method";
+import {api_version} from "./api/version";
 
+// IPlayerService
 import {GetRecentlyPlayedGames} from "./IPlayerService/GetRecentlyPlayedGames";
 import {GetOwnedGames} from "./IPlayerService/GetOwnedGames";
 import {GetSteamLevel} from "./IPlayerService/GetSteamLevel";
 import {GetBadges} from "./IPlayerService/GetBadges";
 import {GetCommunityOwnedBadges} from "./IPlayerService/GetCommunityOwnedBadges";
-import {api_interface} from "./api/interface";
-import {api_method} from "./api/method";
-import {api_version} from "./api/version";
 
 export class steam_session {
    key: api_key;
