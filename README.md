@@ -4,9 +4,12 @@
 
 *A TypeScript frontend to the Steam WebAPI with just enough newtypes.*
 
-The primary focus of this library is correctness, not speed.
-That's not to say that this library is slow but in situations where I feel like
-I have to make a tradeoff between the two, I will choose correctness over speed.
+This library is essentially a thin, mid-level wrapper around the Steam WebAPI.
+
+The primary focus of this library is correctness and parity with the Steam
+WebAPI, not speed. That's not to say that this library is slow but in situations
+where I feel like I have to make a tradeoff between the two, I will choose
+correctness over speed.
 
 Even if you don't end up using this library, the types themselves are better
 documentation than what Steam has left behind. Hopefully someone will find it

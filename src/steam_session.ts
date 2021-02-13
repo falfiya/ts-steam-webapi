@@ -10,6 +10,7 @@ import {GetOwnedGames} from "./IPlayerService/GetOwnedGames";
 import {GetSteamLevel} from "./IPlayerService/GetSteamLevel";
 import {GetBadges} from "./IPlayerService/GetBadges";
 import {GetCommunityOwnedBadges} from "./IPlayerService/GetCommunityOwnedBadges";
+import {GetPlayerAchievements} from "./ISteamUserStats/GetPlayerAchievements";
 
 export class steam_session {
    key: api_key;
@@ -24,14 +25,19 @@ export class steam_session {
       return api_call(int, met, ver, `key=${this.key}&${params}`);
    };
 
-   GetRecentlyPlayedGames =
+   // IPlayerService
+   GetRecentlyPlayedGames=
    GetRecentlyPlayedGames;
-   GetOwnedGames =
+   GetOwnedGames=
    GetOwnedGames;
-   GetSteamLevel =
+   GetSteamLevel=
    GetSteamLevel;
-   GetBadges =
+   GetBadges=
    GetBadges;
-   GetCommunityOwnedBadges =
+   GetCommunityOwnedBadges=
    GetCommunityOwnedBadges;
+
+   // ISteamUserStats
+   GetPlayerAchievements=
+   GetPlayerAchievements;
 }
