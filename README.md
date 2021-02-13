@@ -25,12 +25,14 @@ educational.
    - GetCommunityBadgeProgress
    - ~~IsPlayingSharedGame~~
 - ISteamUserStats
-   - 
+   - GetGlobalAchievementPercentagesForApp
+   - GetNumberOfCurrentPlayers
+   - GetPlayerAchievements
+   - GetSchemaForGame
 
 ## To Support
 
 - GetNewsForApp
 - GetPlayerSummaries
 - GetFriendList
-- GetPlayerAchievements
 - GetUserStatsForGame

@@ -11,22 +11,10 @@ const coalpha_id = to_steam_id("76561198280673707");
 const celeste = 504230 as app_id;
 
 void async function main() {
-   const {playerstats} = await session.GetPlayerAchievements(coalpha_id, celeste);
-   if (playerstats.success) {
-      const {
-         steamID,
-         gameName,
-         achievements,
-      } = playerstats;
-      console.log(`${steamID}'s achievements for ${gameName}`);
-      for (const achi of achievements) {
-         if (achi.achieved) {
-            console.log(`unlocked ${achi.apiname} at ${to_date(achi.unlocktime)}`);
-         } else {
-            console.log(`  locked ${achi.apiname}`);
-         }
-      }
-   } else {
-      console.error(playerstats.error);
+   const {game} = await session.GetSchemaForGame(celeste);
+   const {achievements} = game.availableGameStats;
+   console.log(`There are ${achievements.length} achievements for version ${game.gameVersion} of ${game.gameName}`);
+   for (const achi of achievements) {
+      console.log(`${achi.displayName}: ${achi.hidden ? "[redacted]" : achi.description}`);
    }
 }();
