@@ -16,7 +16,11 @@ Promise<any>
       err.name = `${res.status}, ${res.statusText}`;
       throw err;
    }
-   return await res.json();
+   const obj = await res.json();
+   if (Object.keys(obj).length === 0) {
+      throw new Error("Response object is empty!");
+   }
+   return obj;
 }
 
 export {api_call};

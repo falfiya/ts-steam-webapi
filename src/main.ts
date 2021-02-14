@@ -6,14 +6,14 @@ const key = require("../raw/key");
 
 const session = new steam_session(key);
 
-const coalpha_id = to_steam_id("76561198280673707");
+const coalpha = to_steam_id("76561198280673707");
 const celeste = 504230 as app_id;
 
 void async function main() {
-   const {game} = await session.GetSchemaForGame(celeste);
-   const {achievements} = game.availableGameStats;
-   console.log(`There are ${achievements.length} achievements for version ${game.gameVersion} of ${game.gameName}`);
-   for (const achi of achievements) {
-      console.log(`${achi.displayName}: ${achi.hidden ? "[redacted]" : achi.description}`);
+   const {playerstats} = await session.GetUserStatsForGame(coalpha, celeste);
+   const {steamID, gameName, stats} = playerstats;
+   console.log(`${steamID}'s stats for ${gameName} are: `);
+   for (const {name, value} of stats) {
+      console.log(`${name}: ${value}`);
    }
 }();

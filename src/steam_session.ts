@@ -12,6 +12,7 @@ import {GetBadges} from "./IPlayerService/GetBadges";
 import {GetCommunityOwnedBadges} from "./IPlayerService/GetCommunityOwnedBadges";
 import {GetPlayerAchievements} from "./ISteamUserStats/GetPlayerAchievements";
 import {GetSchemaForGame} from "./ISteamUserStats/GetSchemaForGame";
+import {GetUserStatsForGame} from "./ISteamUserStats/GetUserStatsForGame";
 
 export class steam_session {
    key: api_key;
@@ -43,4 +44,6 @@ export class steam_session {
    GetPlayerAchievements;
    GetSchemaForGame=
    GetSchemaForGame;
+   GetUserStatsForGame=
+   GetUserStatsForGame;
 }
