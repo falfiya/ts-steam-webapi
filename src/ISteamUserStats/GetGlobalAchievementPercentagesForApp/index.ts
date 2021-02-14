@@ -1,13 +1,13 @@
 import {app_id} from "../../api/app_id";
 
-import {ISteamUserStats} from "..";
-import {GetGlobalAchievementPercentagesForApp_method} from "./method";
-import {o_has_achievement_percentages} from "./o_has_achievement_percentages";
+import {GetGlobalAchievementPercentagesForApp_response} from "./response";
 
+import {ISteamUserStats} from "..";
 import {api_call} from "../../api/call";
+import {GetGlobalAchievementPercentagesForApp_method} from "./method";
 
 function GetGlobalAchievementPercentagesForApp(game_id: app_id):
-Promise<o_has_achievement_percentages>
+Promise<GetGlobalAchievementPercentagesForApp_response>
 {
    const params = `gameid=${game_id}`;
    return api_call(

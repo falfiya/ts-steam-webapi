@@ -1,6 +1,5 @@
 import {app_id} from "./api/app_id";
 import {to_steam_id} from "./api/steam_id";
-import {to_date} from "./core/epoch";
 import {steam_session} from "./mod";
 
 const key = require("../raw/key");

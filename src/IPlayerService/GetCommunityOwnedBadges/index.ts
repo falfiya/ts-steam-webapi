@@ -3,16 +3,16 @@ import {steam_id} from "../../api/steam_id";
 import {badge_id} from "../../api/badge_id";
 
 import {basic_response} from "../../api/basic_response";
-import {o_has_quests} from "./o_has_quests";
+import {o_quests} from "./o_quests";
 
 import {IPlayerService} from "..";
 import {GetCommunityOwnedBadges_method} from "./method";
 
-function GetCommunityOwnedBadges(user: steam_id): basic_response<o_has_quests>;
+function GetCommunityOwnedBadges(user: steam_id): basic_response<o_quests>;
 function GetCommunityOwnedBadges(user: steam_id, badge_id: badge_id): basic_response<any>;
 
 function GetCommunityOwnedBadges(this: steam_session, user: steam_id, badge_id?: badge_id):
-basic_response<o_has_quests>
+basic_response<o_quests>
 {
    var params = `steamid=${user}`;
 

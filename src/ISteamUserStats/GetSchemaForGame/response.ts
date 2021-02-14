@@ -1,13 +1,7 @@
-import {game_achievement} from "./game_achievement";
-import {game_statistic} from "./game_statistic";
+import {o_game_name} from "../o_game_name";
+import {o_avail_stats} from "./o_avail_stats";
+import {o_game_version} from "./o_game_version";
 
 export type GetSchemaForGame_response = {
-   game: {
-      gameName: string;
-      gameVersion: string;
-      availableGameStats: {
-         achievements: game_achievement[];
-         stats: game_statistic[];
-      };
-   };
+   game: o_game_name & o_game_version & o_avail_stats;
 };
