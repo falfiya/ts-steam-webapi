@@ -1,4 +1,4 @@
-import {steam_id} from "../api/steam_id";
+import {steam_id} from "../shared/steam_id";
 import {o_game_name} from "./o_game_name";
 
 // Ah, feels like C++...

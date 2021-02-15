@@ -1,4 +1,4 @@
-import {app_id} from "./app_id";
+import {app_id} from "../shared/app_id";
 import {app_image_url} from "./app_image_url";
 import {steam_app_image_url} from "./steam_app_image_url";
 import {akami_app_image_url} from "./akami_app_image_url";

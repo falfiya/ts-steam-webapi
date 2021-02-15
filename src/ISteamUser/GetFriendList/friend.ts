@@ -1,5 +1,5 @@
-import {steam_id} from "../../api/steam_id";
-import {user_relationship} from "../../api/user_relationship";
+import {steam_id} from "../../shared/steam_id";
+import {user_relationship} from "./user_relationship";
 import {epoch} from "../../core/epoch";
 
 export type friend = {

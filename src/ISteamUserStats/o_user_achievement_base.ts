@@ -1,4 +1,4 @@
-import {achievement_name} from "../api/achievement_name";
+import {achievement_name} from "./achievement_name";
 
 export type o_user_achievement_base<key extends string> =
    & {[achievement_key in key]: achievement_name}

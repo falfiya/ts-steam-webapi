@@ -1,6 +1,6 @@
 import {steam_session} from "../../steam_session";
-import {steam_id} from "../../api/steam_id";
-import {app_id} from "../../api/app_id";
+import {steam_id} from "../../shared/steam_id";
+import {app_id} from "../../shared/app_id";
 
 import {GetUserStatsForGame_response} from "./response";
 

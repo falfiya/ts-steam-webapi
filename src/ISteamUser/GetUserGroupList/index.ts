@@ -1,5 +1,5 @@
 import {steam_session} from "../../steam_session";
-import {steam_id} from "../../api/steam_id";
+import {steam_id} from "../../shared/steam_id";
 
 import {ISteamUser} from "..";
 import {GetUserGroupList_method} from "./method";

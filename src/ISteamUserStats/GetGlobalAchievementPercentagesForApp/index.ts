@@ -1,9 +1,9 @@
-import {app_id} from "../../api/app_id";
+import {app_id} from "../../shared/app_id";
 
 import {GetGlobalAchievementPercentagesForApp_response} from "./response";
 
 import {ISteamUserStats} from "..";
-import {api_call} from "../../api/call";
+import {api_call} from "../../api/api_call";
 import {GetGlobalAchievementPercentagesForApp_method} from "./method";
 
 function GetGlobalAchievementPercentagesForApp(game_id: app_id):

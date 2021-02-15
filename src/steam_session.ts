@@ -1,7 +1,7 @@
-import {api_key, to_api_key} from "./api/key";
-import {api_call} from "./api/call";
-import {api_interface} from "./api/interface";
-import {api_method} from "./api/method";
+import {api_key, to_api_key} from "./api/api_key";
+import {api_call} from "./api/api_call";
+import {api_interface} from "./api/api_interface";
+import {api_method} from "./api/api_method";
 import {api_version} from "./api/version";
 
 // IPlayerService

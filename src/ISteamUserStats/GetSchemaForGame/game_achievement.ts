@@ -1,5 +1,5 @@
-import {achievement_name} from "../../api/achievement_name";
-import {akami_app_image_url} from "../../api/akami_app_image_url";
+import {achievement_name} from "../achievement_name";
+import {akami_app_image_url} from "../../image/akami_app_image_url";
 
 export type game_achievement = {
    name: game_achievement;

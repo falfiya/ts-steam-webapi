@@ -1,5 +1,5 @@
 import {uint} from "../../core/basetypes";
-import {community_item_id} from "../../api/community_item_id";
+import {community_item_id} from "./community_item_id";
 
 export type badge = {
    badgeid: uint;

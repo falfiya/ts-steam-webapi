@@ -1,4 +1,4 @@
-import {achievement_name} from "../../api/achievement_name";
+import {achievement_name} from "../achievement_name";
 import {percent} from "../../core/percent";
 
 export type global_achievement_percent = {

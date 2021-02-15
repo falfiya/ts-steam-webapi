@@ -1,13 +1,13 @@
-import {steam_id} from "../../api/steam_id";
-import {community_visibility_state} from "../../api/community_visibility_state";
-import {profile_has_been_configured} from "../../api/profile_has_been_configured";
-import {profile_url} from "../../api/profile_url";
-import {akami_avatar_url} from "../../api/akami_avatar_url";
-import {avatar_hash} from "../../api/avatar_hash";
+import {steam_id} from "../../shared/steam_id";
+import {community_visibility_state} from "./community_visibility_state";
+import {profile_has_been_configured} from "./profile_has_been_configured";
+import {profile_url} from "../../shared/profile_url";
+import {akami_avatar_url} from "../../image/akami_avatar_url";
+import {avatar_hash} from "../../image/avatar_hash";
 import {epoch} from "../../core/epoch";
-import {persona_state} from "../../api/persona_state";
-import {clan_id} from "../../api/clan_id";
-import {persona_state_flags} from "../../api/persona_state_flags";
+import {persona_state} from "./persona_state";
+import {clan_id} from "./clan_id";
+import {persona_state_flags} from "./persona_state_flags";
 
 export type player_summary = {
    steamid: steam_id;

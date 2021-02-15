@@ -1,4 +1,4 @@
-import {steam_id} from "../../api/steam_id"
+import {steam_id} from "../../shared/steam_id"
 
 type success = {
    steamid: steam_id;

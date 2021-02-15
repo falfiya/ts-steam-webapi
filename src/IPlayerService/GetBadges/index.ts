@@ -1,5 +1,5 @@
 import {steam_session} from "../../steam_session";
-import {steam_id} from "../../api/steam_id";
+import {steam_id} from "../../shared/steam_id";
 
 import {basic_response} from "../../api/basic_response";
 import {o_badges} from "./o_badges";

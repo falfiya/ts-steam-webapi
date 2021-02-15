@@ -1,5 +1,5 @@
-import {app_id} from "./api/app_id";
-import {to_steam_id} from "./api/steam_id";
+import {app_id} from "./shared/app_id";
+import {to_steam_id} from "./shared/steam_id";
 import {steam_session} from "./mod";
 
 const key = require("../raw/key");

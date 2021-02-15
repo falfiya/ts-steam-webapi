@@ -1,4 +1,4 @@
-import {app_id} from "../../api/app_id";
+import {app_id} from "../../shared/app_id";
 
 export type GetOwnedGames_options = {
    /** @default false */

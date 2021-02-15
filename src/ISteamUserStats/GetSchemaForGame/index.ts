@@ -1,6 +1,6 @@
 import {steam_session} from "../../steam_session";
-import {app_id} from "../../api/app_id";
-import {l10n} from "../../api/l10n";
+import {app_id} from "../../shared/app_id";
+import {l10n} from "./l10n";
 
 import {GetSchemaForGame_method} from "./method";
 

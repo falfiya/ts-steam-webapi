@@ -1,6 +1,6 @@
 // function params
 import {steam_session} from "../../steam_session";
-import {steam_id} from "../../api/steam_id";
+import {steam_id} from "../../shared/steam_id";
 import {GetOwnedGames_options} from "./options";
 
 // function return
