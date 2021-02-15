@@ -1,13 +1,15 @@
 import {steam_session} from "../../steam_session";
-import {steam_id} from "../../api/steam_id";
 
-import {ISteamUser} from "..";
+import {basic_response} from "../../api/basic_response";
 import {ResolveVanityURL_method} from "./method";
 
-function ResolveVanityURL(this: steam_session, user: steam_id):
-Promise<any>
+import {ISteamUser} from "..";
+import {ResolveVanityUrl_response} from "./response";
+
+function ResolveVanityURL(this: steam_session, vanity_url: string):
+basic_response<ResolveVanityUrl_response>
 {
-   var params = `steamid=${user}`;
+   const params = `vanityurl=${vanity_url}`;
 
    return this.session_api_call(ISteamUser, ResolveVanityURL_method, "v1", params);
 }

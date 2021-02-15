@@ -13,18 +13,20 @@
    - GetBadges
    - GetCommunityBadgeProgress
    - ~~IsPlayingSharedGame~~
+- ISteamUser
+   - GetFriendList
+   - GetPlayerBans
+   - GetPlayerSummaries
+   - GetUserGroupList
+   - ResolveVanityURl
 - ISteamUserStats
    - GetGlobalAchievementPercentagesForApp
    - GetNumberOfCurrentPlayers
    - GetPlayerAchievements
    - GetSchemaForGame
    - GetUserStatsForGame
-
-## To Support
-
-- GetNewsForApp
-- GetPlayerSummaries
-- GetFriendList
+- ~~ISteamNews~~
+   - ~~GetNewsForApp~~
 
 # Info
 
