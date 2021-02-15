@@ -1,4 +1,4 @@
-import {uint} from "../core/basetypes";
+import {uint} from "./numerals";
 
 declare const epoch: unique symbol;
 /** Unix Timestamp */

@@ -1,4 +1,4 @@
-import {uint} from "../../core/basetypes";
+import {uint} from "../../core/numerals";
 import {recently_played_game} from "./recently_played_game";
 
 export type GetRecentlyPlayedGames_response = {

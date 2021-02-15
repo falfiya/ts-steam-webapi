@@ -2,7 +2,7 @@ import {api_key, to_api_key} from "./api/api_key";
 import {api_call} from "./api/api_call";
 import {api_interface} from "./api/api_interface";
 import {api_method} from "./api/api_method";
-import {api_version} from "./api/version";
+import {api_version} from "./api/api_version";
 
 // IPlayerService
 import {GetRecentlyPlayedGames} from "./IPlayerService/GetRecentlyPlayedGames";

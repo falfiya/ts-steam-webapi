@@ -1,6 +1,6 @@
 import {steam_session} from "../../steam_session";
 import {steam_id} from "../../shared/steam_id";
-import {uint} from "../../core/basetypes";
+import {uint} from "../../core/numerals";
 
 import {basic_response} from "../../api/basic_response";
 import {GetRecentlyPlayedGames_response} from "./response";

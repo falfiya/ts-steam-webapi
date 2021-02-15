@@ -1,4 +1,4 @@
-/* n.ts
+/*
 As I said, way too many newtypes.
 These should be useful for people wanting to read this library to know what
 "actual" types are being used under the hood. It's also nice to know if your

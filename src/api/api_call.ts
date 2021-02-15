@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 import {api_interface} from "./api_interface";
 import {api_method} from "./api_method";
-import {api_version} from "./version";
+import {api_version} from "./api_version";
 
 const host = "api.steampowered.com";
 

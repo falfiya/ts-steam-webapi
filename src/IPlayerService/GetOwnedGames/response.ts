@@ -1,4 +1,4 @@
-import {uint} from "../../core/basetypes";
+import {uint} from "../../core/numerals";
 import {owned_game} from "./owned_game";
 
 /**
