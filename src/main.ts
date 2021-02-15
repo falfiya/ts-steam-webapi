@@ -10,10 +10,15 @@ const coalpha = to_steam_id("76561198280673707");
 const celeste = 504230 as app_id;
 
 void async function main() {
-   const {playerstats} = await session.GetUserStatsForGame(coalpha, celeste);
-   const {steamID, gameName, stats} = playerstats;
-   console.log(`${steamID}'s stats for ${gameName} are: `);
-   for (const {name, value} of stats) {
-      console.log(`${name}: ${value}`);
+   const {friends} = (await session.GetFriendList(coalpha)).friendslist;
+   console.log(`coalpha has ${friends.length} friends:`);
+   const friend_ids = friends.map(f => f.steamid);
+   const friend_summaries = await session.GetPlayerSummaries(friend_ids);
+   for (const {personaname, realname} of friend_summaries.response.players) {
+      process.stdout.write(personaname);
+      if (realname) {
+         process.stdout.write(` (${realname})`);
+      }
+      process.stdout.write('\n');
    }
 }();
