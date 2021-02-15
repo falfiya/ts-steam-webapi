@@ -1,6 +1,7 @@
 import {uint} from "../core/basetypes";
 
 declare const epoch: unique symbol;
+/** Unix Timestamp */
 export type epoch = uint & {readonly [epoch]: unique symbol};
 
 export const to_date = (seconds: epoch) =>

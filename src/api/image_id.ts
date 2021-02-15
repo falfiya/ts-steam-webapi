@@ -1,6 +1,5 @@
 import {app_id} from "./app_id";
-import {cdn_url} from "./cdn_url";
-import {image_url} from "./image_url";
+import {app_image_url} from "./app_image_url";
 import {steam_app_image_url} from "./steam_app_image_url";
 import {akami_app_image_url} from "./akami_app_image_url";
 
@@ -9,7 +8,7 @@ export type image_id = string & {readonly [image_id]: unique symbol};
 
 const images_dir = "steamcommunity/public/images/apps";
 
-const to_url = <T extends cdn_url & image_url> (domain: string) =>
+const to_url = <T extends app_image_url> (domain: string) =>
    (game: app_id, image_id: image_id) =>
       `https://${domain}/${images_dir}/${game}/${image_id}.jpg` as T;
 

@@ -10,6 +10,15 @@ import {GetOwnedGames} from "./IPlayerService/GetOwnedGames";
 import {GetSteamLevel} from "./IPlayerService/GetSteamLevel";
 import {GetBadges} from "./IPlayerService/GetBadges";
 import {GetCommunityOwnedBadges} from "./IPlayerService/GetCommunityOwnedBadges";
+
+// ISteamUser
+import {GetFriendList} from "./ISteamUser/GetFriendList";
+import {GetPlayerBans} from "./ISteamUser/GetPlayerBans";
+import {GetPlayerSummaries} from "./ISteamUser/GetPlayerSummaries";
+import {GetUserGroupList} from "./ISteamUser/GetUserGroupList";
+import {ResolveVanityURL} from "./ISteamUser/ResolveVanityURL";
+
+// ISteamUserStats
 import {GetPlayerAchievements} from "./ISteamUserStats/GetPlayerAchievements";
 import {GetSchemaForGame} from "./ISteamUserStats/GetSchemaForGame";
 import {GetUserStatsForGame} from "./ISteamUserStats/GetUserStatsForGame";
@@ -38,6 +47,18 @@ export class steam_session {
    GetBadges;
    GetCommunityOwnedBadges=
    GetCommunityOwnedBadges;
+
+   // ISteamUser
+   GetFriendList=
+   GetFriendList;
+   GetPlayerBans=
+   GetPlayerBans;
+   GetPlayerSummaries=
+   GetPlayerSummaries;
+   GetUserGroupList=
+   GetUserGroupList;
+   ResolveVanityURL=
+   ResolveVanityURL;
 
    // ISteamUserStats
    GetPlayerAchievements=

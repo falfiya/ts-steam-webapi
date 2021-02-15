@@ -18,6 +18,7 @@
    - GetNumberOfCurrentPlayers
    - GetPlayerAchievements
    - GetSchemaForGame
+   - GetUserStatsForGame
 
 ## To Support
 

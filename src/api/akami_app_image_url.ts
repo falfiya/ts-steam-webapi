@@ -1,8 +1,4 @@
-import {cdn_url} from "./cdn_url";
-import {image_url} from "./image_url";
+import {akami_image_url} from "./akami_image_url";
+import {app_image_url} from "./app_image_url";
 
-declare const akami_app_image_url: unique symbol;
-export type akami_app_image_url =
-   & cdn_url
-   & image_url
-   & {readonly [akami_app_image_url]: unique symbol};
+export type akami_app_image_url = akami_image_url & app_image_url;
