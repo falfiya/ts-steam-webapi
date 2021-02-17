@@ -1,4 +1,4 @@
-import {url} from "../core/url";
+import {url} from "./url_domain";
 
 declare const profile_url: unique symbol;
 export type profile_url = url & {readonly [profile_url]: unique symbol};

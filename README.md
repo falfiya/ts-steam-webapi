@@ -2,7 +2,7 @@
 
 ![If anyone wants to make me an icon, I'd be glad](misc/icon.png)
 
-*A TypeScript frontend to the Steam WebAPI with just enough newtypes.*
+*A somewhat obsessively typed frontend to the Steam Web API*
 
 ## Supported
 
@@ -18,7 +18,7 @@
    - GetPlayerBans
    - GetPlayerSummaries
    - GetUserGroupList
-   - ResolveVanityURl
+   - ResolveVanityURL
 - ISteamUserStats
    - GetGlobalAchievementPercentagesForApp
    - GetNumberOfCurrentPlayers
@@ -33,9 +33,9 @@
 This library is essentially a thin, mid-level wrapper around the Steam WebAPI.
 
 The primary focus of this library is correctness and parity with the Steam
-WebAPI, not speed. That's not to say that this library is slow but in situations
-where I feel like I have to make a tradeoff between the two, I will choose
-correctness over speed.
+WebAPI. In situations where I feel like I have to make a tradeoff between
+correctness and speed, I will choose the former. If you're looking for speed,
+write it in C++ anyways.
 
 Even if you don't end up using this library, the types themselves are better
 documentation than what Steam has left behind. Hopefully someone will find it
