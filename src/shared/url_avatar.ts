@@ -1,4 +1,5 @@
-import {make_url_image} from "./url_image";
+import {make_url_image, url_image} from "./url_image";
+import {url_path} from "./url_path";
 
-export const url_avatar = make_url_image("avatars");
-export type  url_avatar = typeof url_avatar;
+export type url_avatar = url_image & url_path<"steamcommunity/public/images/avatars">;
+export const url_avatar: url_avatar = make_url_image("avatars");

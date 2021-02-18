@@ -1,4 +1,4 @@
-const typescript = require("@rollup/plugin-typescript");
+const typescript = require("rollup-plugin-typescript2");
 const {terser} = require("rollup-plugin-terser");
 
 module.exports = {
@@ -7,8 +7,7 @@ module.exports = {
       file: "dist/lib.min.js",
       format: "cjs",
       strict: true,
-      sourcemap: true,
    },
-   watch: "src/lib.ts",
    plugins: [typescript(), terser()],
+   external: ["node-fetch"],
 };

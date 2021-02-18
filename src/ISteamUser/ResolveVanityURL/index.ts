@@ -4,14 +4,25 @@ import {basic_response} from "../../api/basic_response";
 import {ResolveVanityURL_method} from "./method";
 
 import {ISteamUser} from "..";
-import {ResolveVanityUrl_response} from "./response";
+import {maybe_response, ResolveVanityUrl_response} from "./response";
 
-function ResolveVanityURL(this: steam_session, vanity_url: string):
+async function ResolveVanityURL(this: steam_session, vanity_url: string):
 basic_response<ResolveVanityUrl_response>
 {
    const params = `vanityurl=${vanity_url}`;
 
-   return this.session_api_call(ISteamUser, ResolveVanityURL_method, "v1", params);
+   const res: maybe_response = await this.session_api_call(
+      ISteamUser,
+      ResolveVanityURL_method,
+      "v1",
+      params,
+   );
+
+   if (res.response.success !== 1) {
+      throw new Error(res.response.message);
+   }
+
+   return res as unknown as basic_response<ResolveVanityUrl_response>;
 }
 
 export {ResolveVanityURL};

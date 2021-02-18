@@ -1,4 +1,5 @@
 {
+   "include": ["src/**/*.ts"],
    "compilerOptions": {
       "strict": true,
       "lib": [
@@ -10,12 +11,16 @@
          "ES2020",
       ],
       "target": "ES2019",
-      "module": "CommonJS",
-      "esModuleInterop": true,
+
+      "module": "esnext",
       "moduleResolution": "Node",
-      "outDir": "bin",
       "newLine": "lf",
-      "sourceMap": true
+
+      "rootDir": "src",
+
+      "outDir": "bin",
+
+      "sourceMap": true,
+      "declaration": true,
    },
-   "include": ["src/**/*.ts"]
 }
