@@ -9,7 +9,7 @@ import {GetRecentlyPlayedGames} from "./IPlayerService/GetRecentlyPlayedGames";
 import {GetOwnedGames} from "./IPlayerService/GetOwnedGames";
 import {GetSteamLevel} from "./IPlayerService/GetSteamLevel";
 import {GetBadges} from "./IPlayerService/GetBadges";
-import {GetCommunityOwnedBadges} from "./IPlayerService/GetCommunityOwnedBadges";
+import {GetCommunityBadgeProgress} from "./IPlayerService/GetCommunityBadgeProgress";
 
 // ISteamUser
 import {GetFriendList} from "./ISteamUser/GetFriendList";
@@ -45,8 +45,8 @@ export class steam_session {
    GetSteamLevel;
    GetBadges=
    GetBadges;
-   GetCommunityOwnedBadges=
-   GetCommunityOwnedBadges;
+   GetCommunityBadgeProgress=
+   GetCommunityBadgeProgress;
 
    // ISteamUser
    GetFriendList=
