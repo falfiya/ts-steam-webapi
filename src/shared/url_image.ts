@@ -1,9 +1,11 @@
-import {constexpr} from "./constexpr";
-
-export const url_image = constexpr("steamcommunity/public/images");
-export type  url_image = typeof url_image;
-
 import {url_path} from "./url_path";
 
-export const make_url_image_subpath = <path extends string>(path: path) =>
-   `${url_image}/${path}` as url_path<`${url_image}/${path}`>;
+declare const url_image: unique symbol;
+export type url_image = {readonly [url_image]: true};
+
+import {constexpr} from "./constexpr";
+export const url_image_path = constexpr("steamcommunity/public/images");
+export type  url_image_path = typeof url_image_path;
+
+export const make_url_image = <path extends string>(path: path) =>
+   `${url_image_path}/${path}` as url_image & url_path<`${url_image_path}/${path}`>;

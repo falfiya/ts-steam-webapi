@@ -4,6 +4,9 @@
 
 *A somewhat obsessively typed frontend to the Steam Web API*
 
+Sometimes the language server struggles with the types of things because they're
+pretty complex types but just try hovering over it again.
+
 ## Supported
 
 - IPlayerService

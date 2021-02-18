@@ -1,19 +1,25 @@
-import {url} from "./url_domain";
+import {is_url} from "./url";
+import {url_community} from "./url_community";
+import {make_url_path} from "./url_path";
 
-declare const profile_url: unique symbol;
-export type profile_url = url & {readonly [profile_url]: unique symbol};
+const id_path = make_url_path("id");
+type  id_path = typeof id_path;
 
-const starts_with_steam = (url: url) => false
-   || url.startsWith("https://steamcommunity.com/id/")
-   || url.startsWith("https://steamcommunity.com/profiles/")
+const profile_path = make_url_path("profiles");
+type  profile_path = typeof profile_path;
 
-export const is_profile_url = (url: url) => true
-   && starts_with_steam(url)
-   && !url.endsWith('/');
+type either_path = id_path | profile_path;
 
-export const to_profile_url = (maybe_purl: url): profile_url => {
-   if (is_profile_url(maybe_purl)) {
-      return maybe_purl as profile_url;
+export type profile_url = url_community & either_path;
+
+const starts_with_steam = (s: string) => false
+   || is_url(url_community, id_path, s)
+   || is_url(url_community, profile_path, s);
+
+export const to_profile_url = (s: string): profile_url => {
+   if (starts_with_steam(s)) {
+      return s as profile_url;
    }
-   throw new Error(`${maybe_purl} was not a profile_url!`);
+
+   throw new Error(`${s} was not a profile_url!`);
 }

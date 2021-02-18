@@ -1,12 +1,13 @@
+import {url_akami} from "../../shared/url_akami";
+import {url_app_image} from "../../shared/url_app_image";
 import {achievement_name} from "../achievement_name";
-import {akami_app_image_url} from "../../image/akami_app_image_url";
 
 export type game_achievement = {
-   name: game_achievement;
+   name: achievement_name;
    defaultvalue: number;
    displayName: string;
    hidden: 0 | 1;
    description: string;
-   icon: akami_app_image_url;
-   icongray: akami_app_image_url;
+   icon: url_akami & url_app_image;
+   icongray: url_akami & url_app_image;
 };
