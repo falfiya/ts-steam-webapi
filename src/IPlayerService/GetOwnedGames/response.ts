@@ -8,7 +8,7 @@ import {owned_game} from "./owned_game";
  * so long as it satisfies the base fields that the Steam Web API will always
  * respond with.
  */
-export type GetOwnedGames_response<owned_game_t extends owned_game> = {
+export interface GetOwnedGames_response<owned_game_t extends owned_game> {
    game_count: uint;
    games: owned_game_t[];
 };

@@ -2,4 +2,4 @@ run: build
 	node bin/main
 
 build:
-	npx tsc
+	./node_modules/.bin/tsc

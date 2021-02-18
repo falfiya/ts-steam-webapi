@@ -46,10 +46,6 @@ export function opts_to_params(opts: GetOwnedGames_options): string {
    }
 
    if (appids_filter !== undefined) {
-      // if you mess this up, it's your fault anyways
-      //if (!Array.isArray(appids_filter)) {
-      //   throw new TypeError("GetOwnedGames_options.appids_filter must be an Array!");
-      //}
       params += `&appids_filter=${appids_filter.join(',')}`;
    }
 

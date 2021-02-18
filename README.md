@@ -2,7 +2,7 @@
 
 ![If anyone wants to make me an icon, I'd be glad](misc/icon.png)
 
-*A somewhat obsessively typed frontend to the Steam Web API*
+*A somewhat obsessively typed frontend to the Steam Web API.*
 
 Sometimes the language server struggles with the types of things because they're
 pretty complex types but just try hovering over it again.
@@ -15,7 +15,6 @@ pretty complex types but just try hovering over it again.
    - GetSteamLevel
    - GetBadges
    - GetCommunityBadgeProgress
-   - ~~IsPlayingSharedGame~~
 - ISteamUser
    - GetFriendList
    - GetPlayerBans
@@ -31,7 +30,7 @@ pretty complex types but just try hovering over it again.
 - ~~ISteamNews~~
    - ~~GetNewsForApp~~
 
-# Info
+## Info
 
 This library is essentially a thin, mid-level wrapper around the Steam WebAPI.
 

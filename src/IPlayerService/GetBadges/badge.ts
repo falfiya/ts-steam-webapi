@@ -1,7 +1,7 @@
 import {uint} from "../../core/numerals";
 import {community_item_id} from "./community_item_id";
 
-export interface badge {
+export type badge = {
    badgeid: uint;
    level: uint;
    completion_time: uint;
