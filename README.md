@@ -44,3 +44,8 @@ documentation than what Steam has left behind. Hopefully someone will find it
 educational.
 
 Some of this code might be a bit DRY for some, which is understandable. I did go a bit overboard with sum types.
+
+## Whatever else
+
+Large thanks to [https://steamwebapi.azurewebsites.net/](https://steamwebapi.azurewebsites.net/).
+Not as much of a thanks to Valve, who's documentation could be better.
