@@ -13,9 +13,14 @@
       "module": "CommonJS",
       "esModuleInterop": true,
       "moduleResolution": "Node",
+
       "outDir": "bin",
+
       "newLine": "lf",
-      "sourceMap": true
+
+      "sourceMap": true,
+      "declaration": true,
+      "declarationMap": true,
    },
    "include": ["src/**/*.ts"]
 }
