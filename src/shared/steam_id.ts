@@ -1,5 +1,5 @@
 declare const steam_id: unique symbol;
-export type steam_id = string & {readonly [steam_id]: unique symbol};
+export type steam_id = string & {readonly [steam_id]: void};
 
 const seventeen_digits = /^\d{17}$/;
 export const to_steam_id = (s: string) => {

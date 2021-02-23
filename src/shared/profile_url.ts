@@ -1,25 +1,13 @@
-import {is_url} from "./url";
-import {url_community} from "./url_community";
-import {make_url_path} from "./url_path";
+import {steamcommunity} from "./steamcommunity";
+import {join} from "./url";
+import {steam_id} from "./steam_id";
 
-const id_path = make_url_path("id");
-type  id_path = typeof id_path;
+export const id_url = join(steamcommunity, "id");
+export type  id_url<id extends steam_id> = `${typeof id_url}/${id}`;
 
-const profile_path = make_url_path("profiles");
-type  profile_path = typeof profile_path;
+export const vanity_url = join(steamcommunity, "profiles");
+export type  vanity_url<vanity extends string> = `${typeof vanity_url}/${vanity}`;
 
-type either_path = id_path | profile_path;
-
-export type profile_url = url_community & either_path;
-
-const starts_with_steam = (s: string) => false
-   || is_url(url_community, id_path, s)
-   || is_url(url_community, profile_path, s);
-
-export const to_profile_url = (s: string): profile_url => {
-   if (starts_with_steam(s)) {
-      return s as profile_url;
-   }
-
-   throw new Error(`${s} was not a profile_url!`);
-}
+export type profile_url<id extends steam_id, vanity extends string = string> =
+   | id_url<id>
+   | vanity_url<vanity>;
