@@ -1,9 +1,11 @@
-import {steam_session} from "./lib";
-import {app_id} from "./shared/app_id";
-
-const ss = new steam_session("");
+import {to_date} from "./core/epoch";
+import {GetScrapedGames} from "./lib";
 
 void async function main() {
-   const res = await ss.GetSchemaForGame(1 as app_id);
-   res.game.availableGameStats.achievements[0].icon
+   const games = await GetScrapedGames("https://steamcommunity.com/id/coalpha");
+   console.log(`coalpha has played ${games.length} games`);
+   games.sort((a, b) => - a.last_played + b.last_played);
+   for (const game of games) {
+      console.log(`${game.name} last played on ${to_date(game.last_played)}`);
+   }
 }();

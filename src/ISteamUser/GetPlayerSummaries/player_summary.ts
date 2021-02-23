@@ -12,19 +12,19 @@ import {persona_state_flags} from "./persona_state_flags";
 import {steamcdn_akami} from "../../shared/steamcdn_akami";
 import {avatar_hex_byte} from "../../shared/avatar_hex_byte";
 import {avatar} from "../../shared/avatar";
-import {profile_url} from "../../shared/profile_url";
+import {user_url} from "../../shared/user_url";
 
 export type player_summary<
    id extends steam_id,
    a_byte extends avatar_hex_byte,
    a_hash extends avatar_hash
 > = {
-   steamid: steam_id;
+   steamid: id;
 
    communityvisibilitystate: community_visibility_state;
    profilestate: profile_has_been_configured;
    personaname: string;
-   profileurl: profile_url<id>;
+   profileurl: user_url<id>;
 
    avatar: avatar<steamcdn_akami, a_byte, a_hash>;
    avatarmedium: avatar<steamcdn_akami, a_byte, a_hash, "_medium">;

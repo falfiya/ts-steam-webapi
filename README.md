@@ -2,7 +2,7 @@
 
 ![If anyone wants to make me an icon, I'd be glad](misc/icon.png)
 
-*A somewhat obsessively typed frontend to the Steam Web API.*
+*An obsessively typed frontend to the Steam Web API.*
 
 Sometimes the language server struggles with the types of things because they're
 pretty complex types but just try hovering over it again.

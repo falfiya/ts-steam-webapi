@@ -6,3 +6,6 @@ export {GetGlobalAchievementPercentagesForApp};
 
 import {GetNumberOfCurrentPlayers} from "./ISteamUserStats/GetNumberOfCurrentPlayers";
 export {GetNumberOfCurrentPlayers};
+
+import {GetScrapedGames} from "./Web/GetScrapedGames";
+export {GetScrapedGames};
