@@ -21,6 +21,7 @@
       "sourceMap": true,
       "declaration": true,
       "declarationMap": true,
+      "declarationDir": "bin"
    },
    "include": ["src/**/*.ts"]
 }

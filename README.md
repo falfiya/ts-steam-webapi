@@ -1,4 +1,4 @@
-# @coalpha/steam-webapi
+# @coalpha/ts-steam-webapi
 
 ![If anyone wants to make me an icon, I'd be glad](misc/icon.png)
 
