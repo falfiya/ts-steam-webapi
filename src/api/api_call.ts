@@ -32,11 +32,9 @@ const html_tags_except_first = /(?<=\/?\w+>[^>]*)<\/?\w+>/g;
 const first_tag = /^<\/?\w+>/;
 
 // https://stackoverflow.com/questions/1732348
-function render_html(html: string): string {
-   console.log(html);
-   return html
+const render_html = (html: string) =>
+   html
       .replace(newline, "")
       .replace(pre_or_useless_html_tags, "")
       .replace(html_tags_except_first, ", ")
-      .replace(first_tag, "")
-}
+      .replace(first_tag, "");

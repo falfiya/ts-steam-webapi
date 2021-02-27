@@ -2,12 +2,20 @@
 
 ![If anyone wants to make me an icon, I'd be glad](misc/icon.png)
 
-*An obsessively typed frontend to the Steam Web API.*
+This library is an obsessively typed frontend to the Steam Web API.
+At times, it might look like it goes overboard with types but that's pretty much
+the entire point.
 
-Sometimes the language server struggles with the types of things because they're
-pretty complex types but just try hovering over it again.
 
-## Supported
+## Install
+
+This library is not published on npm yet but you can still install it:
+
+```
+npm i git+https://github.com/coalpha/ts-steam-webapi.git
+```
+
+## Tree
 
 - IPlayerService
    - GetRecentlyPlayedGames
@@ -27,25 +35,16 @@ pretty complex types but just try hovering over it again.
    - GetPlayerAchievements
    - GetSchemaForGame
    - GetUserStatsForGame
-- ~~ISteamNews~~
-   - ~~GetNewsForApp~~
+- ISteamNews
+   - GetNewsForApp
 
-## Info
+### IPlayerService
 
-This library is essentially a thin, mid-level wrapper around the Steam WebAPI.
+### ISteamUser
 
-The primary focus of this library is correctness and parity with the Steam
-WebAPI. In situations where I feel like I have to make a tradeoff between
-correctness and speed, I will choose the former. If you're looking for speed,
-write it in C++ anyways.
+### ISteamUserStats
 
-Even if you don't end up using this library, the types themselves are better
-documentation than what Steam has left behind. Hopefully someone will find it
-educational.
-
-Some of this code might be a bit DRY for some, which is understandable. I did go a bit overboard with sum types.
-
-## Whatever else
+## Other
 
 Large thanks to [https://steamwebapi.azurewebsites.net/](https://steamwebapi.azurewebsites.net/).
 Not as much of a thanks to Valve, who's documentation could be better.
