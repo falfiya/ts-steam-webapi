@@ -48,7 +48,7 @@ const lib_d_ts_config = {
 const lib_min_d_ts_config = {
    input: "bin/lib.d.ts",
 
-   output: {file: "dist/lib.d.ts"},
+   output: {file: "dist/lib.min.d.ts"},
 
    plugins: [dts()],
 };

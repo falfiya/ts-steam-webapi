@@ -3,7 +3,7 @@ export type api_key = string & {readonly [api_key]: void};
 export const to_api_key = (s: string) => {
    const buf = Buffer.from(s, "hex");
 
-   if (buf.toString("hex") !== s) {
+   if (buf.toString("hex").toLowerCase() !== s.toLowerCase()) {
       throw new Error(`Could not parse '${s}' as hex!`);
    }
 

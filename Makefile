@@ -9,3 +9,6 @@ check:
 
 clean:
 	wsl rm -rf bin dist
+
+rebuild: clean build~release
+	-
