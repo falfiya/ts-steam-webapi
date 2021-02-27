@@ -2,21 +2,25 @@ import {steam_session} from "../../steam_session";
 import {app_id} from "../../shared/app_id";
 import {l10n} from "./l10n";
 
-import {GetSchemaForGame_method} from "./method";
-
 import {ISteamUserStats} from "..";
-import {GetSchemaForGame_response} from "./response";
+import {api_method} from "../../api/api_method";
+const method = "GetSchemaForGame" as api_method;
 
-function GetSchemaForGame(this: steam_session, game_id: app_id, localization?: l10n):
-Promise<GetSchemaForGame_response>
-{
+async function GetSchemaForGame(this: steam_session, game_id: app_id, localization?: l10n) {
    var params = `appid=${game_id}`;
 
    if (localization) {
       params += `&l=${localization}`;
    }
 
-   return this.api_call(ISteamUserStats, GetSchemaForGame_method, "v2", params);
+   const {game} = await this.api_call<import("./res")>(
+      ISteamUserStats,
+      method,
+      "v2",
+      params
+   );
+
+   return game;
 }
 
 export {GetSchemaForGame};

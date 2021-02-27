@@ -4,16 +4,14 @@ import {steam_id} from "../../shared/steam_id";
 import {GetOwnedGames_options} from "./options";
 
 // function return
-import {o_game_count} from "./o_game_count";
-import {o_owned_games} from "./o_owned_games";
 import {owned_game} from "./owned_game";
 import {owned_game_ex} from "./owned_game_ex";
 
 // stuff used inside the function
 import {IPlayerService} from "..";
-import {m_GetOwnedGames} from "./method";
 import {opts_to_params} from "./options";
-import {GetOwnedGames_response} from "./response";
+import {api_method} from "../../api/api_method";
+const method = "GetOwnedGames" as api_method;
 
 function GetOwnedGames(user: steam_id):
 Promise<owned_game[]>;
@@ -39,9 +37,9 @@ Promise<(owned_game | owned_game_ex)[]>
       params += opts_to_params(opts);
    }
 
-   const {response} = await this.api_call<GetOwnedGames_response>(
+   const {response} = await this.api_call<import("./res")>(
       IPlayerService,
-      m_GetOwnedGames,
+      method,
       "v1",
       params
    );

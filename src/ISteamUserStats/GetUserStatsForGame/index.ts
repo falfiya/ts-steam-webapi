@@ -2,17 +2,25 @@ import {steam_session} from "../../steam_session";
 import {steam_id} from "../../shared/steam_id";
 import {app_id} from "../../shared/app_id";
 
-import {GetUserStatsForGame_response} from "./response";
-
 import {ISteamUserStats} from "..";
-import {GetUserStatsForGame_method} from "./method";
+import {api_method} from "../../api/api_method";
+const method = "GetUserStatsForGame" as api_method;
 
-function GetUserStatsForGame(this: steam_session, user: steam_id, game_id: app_id):
-Promise<GetUserStatsForGame_response>
-{
+async function GetUserStatsForGame(this: steam_session, user: steam_id, game_id: app_id) {
    const params = `steamid=${user}&appid=${game_id}`;
 
-   return this.api_call(ISteamUserStats, GetUserStatsForGame_method, "v2", params);
+   const {playerstats} = await this.api_call<import("./res")>(
+      ISteamUserStats,
+      method,
+      "v2",
+      params,
+   );
+
+   if (playerstats === undefined) {
+      throw new Error("GetUserStatsForGame: playerstats is undefined!");
+   }
+
+   return playerstats;
 }
 
 export {GetUserStatsForGame};

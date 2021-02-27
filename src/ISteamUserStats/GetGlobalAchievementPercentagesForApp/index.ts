@@ -1,17 +1,19 @@
 import {app_id} from "../../shared/app_id";
 
-import {GetGlobalAchievementPercentagesForApp_response} from "./response";
-
 import {ISteamUserStats} from "..";
 import {api_call} from "../../api/api_call";
-import {GetGlobalAchievementPercentagesForApp_method} from "./method";
+import {api_method} from "../../api/api_method";
+
+const method = "GetGlobalAchievementPercentagesForApp" as api_method;
 
 async function GetGlobalAchievementPercentagesForApp(game_id: app_id) {
-   const {response} = await api_call<GetGlobalAchievementPercentagesForApp_response>(
+   const params = `gameid=${game_id}`;
+
+   const {response} = await api_call<import("./res")>(
       ISteamUserStats,
-      GetGlobalAchievementPercentagesForApp_method,
+      method,
       "v2",
-      `gameid=${game_id}`,
+      params,
    );
 
    if (response === undefined) {

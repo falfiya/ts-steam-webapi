@@ -1,17 +1,18 @@
 import {steam_session} from "../../steam_session";
 import {steam_id} from "../../shared/steam_id";
 
-import {GetCommunityBadgeProgress_response} from "./response";
-
 import {IPlayerService} from "..";
-import {GetCommunityBadgeProgress_method} from "./method";
+import {api_method} from "../../api/api_method";
+const method = "GetCommunityBadgeProgress" as api_method;
 
 async function GetCommunityBadgeProgress(this: steam_session, user: steam_id) {
-   const {response} = await this.api_call<GetCommunityBadgeProgress_response>(
+   const params = `steamid=${user}`;
+
+   const {response} = await this.api_call<import("./res")>(
       IPlayerService,
-      GetCommunityBadgeProgress_method,
+      method,
       "v1",
-      `steamid=${user}`,
+      params,
    );
 
    if (response === undefined) {

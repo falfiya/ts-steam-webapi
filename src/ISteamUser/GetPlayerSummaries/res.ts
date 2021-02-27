@@ -4,10 +4,12 @@ import {avatar_hex_byte} from "../../shared/avatar_hex_byte";
 import {steam_id} from "../../shared/steam_id";
 import {player_summary} from "./player_summary";
 
-export type GetPlayerSummaries_response = o_response<{
+type res = o_response<{
    players: player_summary<
       steam_id,
       avatar_hex_byte,
       avatar_hash
    >[];
 }>;
+
+export = res;

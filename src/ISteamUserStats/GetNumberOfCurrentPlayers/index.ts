@@ -1,16 +1,15 @@
 import {app_id} from "../../shared/app_id";
 
-import {current_players} from "./current_players";
-
 import {api_call} from "../../api/api_call";
 import {ISteamUserStats} from "..";
-import {GetNumberOfCurrentPlayers_method} from "./method";
-import {o_response} from "../../shared/o_response";
+import {api_method} from "../../api/api_method";
+
+const method = "GetNumberOfCurrentPlayers" as api_method;
 
 async function GetNumberOfCurrentPlayers(app_id: app_id) {
-   const {response} = await api_call<o_response<current_players>>(
+   const {response} = await api_call<import("./res")>(
       ISteamUserStats,
-      GetNumberOfCurrentPlayers_method,
+      method,
       "v1",
       `appid=${app_id}`,
    );

@@ -3,7 +3,7 @@ import {app_id} from "../shared/app_id";
 import {or} from "../shared/or";
 import {avail_stat_links} from "./avail_stat_links";
 
-export type scraped_game<game_id extends app_id> = {
+export type scraped_game<game_id extends app_id = app_id> = {
    appid: game_id;
    name: string;
    logo: `https://cdn.cloudflare.steamstatic.com/steam/apps/${or<game_id, number>}/capsule_184x69.jpg`;

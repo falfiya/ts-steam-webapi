@@ -2,15 +2,15 @@ import {steam_session} from "../../steam_session";
 import {steam_id} from "../../shared/steam_id";
 
 import {ISteamUser} from "..";
-import {GetPlayerBans_method} from "./method";
-import {GetPlayerBans_response} from "./response";
+import {api_method} from "../../api/api_method";
+const method = "GetPlayerBans" as api_method;
 
 async function GetPlayerBans(this: steam_session, users: steam_id[]) {
    const params = `steamids=${users.join(',')}`;
 
-   const res = await this.api_call<GetPlayerBans_response>(
+   const res = await this.api_call<import("./res")>(
       ISteamUser,
-      GetPlayerBans_method,
+      method,
       "v1",
       params,
    );
