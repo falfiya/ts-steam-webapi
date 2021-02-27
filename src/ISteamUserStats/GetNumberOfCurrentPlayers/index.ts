@@ -1,18 +1,25 @@
 import {app_id} from "../../shared/app_id";
 
-import {basic_response} from "../../api/basic_response";
 import {current_players} from "./current_players";
 
 import {api_call} from "../../api/api_call";
 import {ISteamUserStats} from "..";
 import {GetNumberOfCurrentPlayers_method} from "./method";
+import {o_response} from "../../shared/o_response";
 
-function GetNumberOfCurrentPlayers(app_id: app_id):
-basic_response<current_players>
-{
-   const params = `appid=${app_id}`;
+async function GetNumberOfCurrentPlayers(app_id: app_id) {
+   const {response} = await api_call<o_response<current_players>>(
+      ISteamUserStats,
+      GetNumberOfCurrentPlayers_method,
+      "v1",
+      `appid=${app_id}`,
+   );
 
-   return api_call(ISteamUserStats, GetNumberOfCurrentPlayers_method, "v1", params);
+   if (response === undefined) {
+      throw new Error("GetNumberOfCurrentPlayers: response is undefined!");
+   }
+
+   return response;
 }
 
 export {GetNumberOfCurrentPlayers};

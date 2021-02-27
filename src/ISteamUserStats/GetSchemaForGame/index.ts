@@ -16,7 +16,7 @@ Promise<GetSchemaForGame_response>
       params += `&l=${localization}`;
    }
 
-   return this.session_api_call(ISteamUserStats, GetSchemaForGame_method, "v2", params);
+   return this.api_call(ISteamUserStats, GetSchemaForGame_method, "v2", params);
 }
 
 export {GetSchemaForGame};

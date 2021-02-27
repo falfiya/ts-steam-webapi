@@ -1,17 +1,27 @@
 import {steam_session} from "../../steam_session";
 
-import {basic_response} from "../../api/basic_response";
 import {ResolveVanityURL_method} from "./method";
 
 import {ISteamUser} from "..";
-import {ResolveVanityUrl_response} from "./response";
+import {ResolveVanityUrl_is_err, ResolveVanityUrl_response} from "./response";
 
-function ResolveVanityURL(this: steam_session, vanity_url: string):
-basic_response<ResolveVanityUrl_response>
-{
-   const params = `vanityurl=${vanity_url}`;
+async function ResolveVanityURL(this: steam_session, vanity_url: string) {
+   const {response} = await this.api_call<ResolveVanityUrl_response>(
+      ISteamUser,
+      ResolveVanityURL_method,
+      "v1",
+      `vanityurl=${vanity_url}`,
+   );
 
-   return this.session_api_call(ISteamUser, ResolveVanityURL_method, "v1", params);
+   if (response === undefined) {
+      throw new Error("ResolveVanityUrl: response is undefined!");
+   }
+
+   if (ResolveVanityUrl_is_err(response)) {
+      throw new Error(`ResolveVanityUrl ${response.success}: ${response}`);
+   }
+
+   return response.steamid;
 }
 
 export {ResolveVanityURL};

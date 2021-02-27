@@ -1,8 +1,8 @@
-import {uint} from "../../core/numerals";
-import {recently_played_game} from "./recently_played_game";
+import {o_response} from "../../shared/o_response";
+import {o_recent_games} from "./o_recent_games";
+import {o_total_count} from "./o_total_count";
 
-export interface GetRecentlyPlayedGames_response {
-   /** How many objects were fetched */
-   total_count: uint;
-   games: recently_played_game[];
-};
+export type GetRecentlyPlayedGames_response = o_response<
+   & o_recent_games
+   & o_total_count
+>;

@@ -1,21 +1,24 @@
 import {steam_session} from "../../steam_session";
 import {steam_id} from "../../shared/steam_id";
 
-import {basic_response} from "../../api/basic_response";
 import {GetCommunityBadgeProgress_response} from "./response";
 
 import {IPlayerService} from "..";
 import {GetCommunityBadgeProgress_method} from "./method";
 
-function GetCommunityBadgeProgress(user: steam_id):
-basic_response<GetCommunityBadgeProgress_response>;
+async function GetCommunityBadgeProgress(this: steam_session, user: steam_id) {
+   const {response} = await this.api_call<GetCommunityBadgeProgress_response>(
+      IPlayerService,
+      GetCommunityBadgeProgress_method,
+      "v1",
+      `steamid=${user}`,
+   );
 
-function GetCommunityBadgeProgress(this: steam_session, user: steam_id):
-basic_response<GetCommunityBadgeProgress_response>
-{
-   const params = `steamid=${user}`;
+   if (response === undefined) {
+      throw new Error("GetCommunityBadgeProgress: response is undefined!");
+   }
 
-   return this.session_api_call(IPlayerService, GetCommunityBadgeProgress_method, "v1", params);
+   return response.quests;
 }
 
 export {GetCommunityBadgeProgress};

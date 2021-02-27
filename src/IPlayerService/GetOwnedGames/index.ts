@@ -4,9 +4,8 @@ import {steam_id} from "../../shared/steam_id";
 import {GetOwnedGames_options} from "./options";
 
 // function return
-import {basic_response} from "../../api/basic_response";
-import {GetOwnedGames_response} from "./response";
-
+import {o_game_count} from "./o_game_count";
+import {o_owned_games} from "./o_owned_games";
 import {owned_game} from "./owned_game";
 import {owned_game_ex} from "./owned_game_ex";
 
@@ -14,24 +13,25 @@ import {owned_game_ex} from "./owned_game_ex";
 import {IPlayerService} from "..";
 import {m_GetOwnedGames} from "./method";
 import {opts_to_params} from "./options";
+import {GetOwnedGames_response} from "./response";
 
 function GetOwnedGames(user: steam_id):
-basic_response<GetOwnedGames_response<owned_game>>;
+Promise<owned_game[]>;
 
 function GetOwnedGames(
    user: steam_id,
    opts: GetOwnedGames_options & {include_appinfo?: false},
 ):
-basic_response<GetOwnedGames_response<owned_game>>;
+Promise<owned_game[]>;
 
 function GetOwnedGames(
    user: steam_id,
    opts: GetOwnedGames_options & {include_appinfo: true},
 ):
-basic_response<GetOwnedGames_response<owned_game_ex>>;
+Promise<owned_game_ex[]>;
 
-function GetOwnedGames(this: steam_session, user: steam_id, opts?: GetOwnedGames_options):
-basic_response<GetOwnedGames_response<owned_game | owned_game_ex>>
+async function GetOwnedGames(this: steam_session, user: steam_id, opts?: GetOwnedGames_options):
+Promise<(owned_game | owned_game_ex)[]>
 {
    var params = `steamid=${user}`;
 
@@ -39,7 +39,18 @@ basic_response<GetOwnedGames_response<owned_game | owned_game_ex>>
       params += opts_to_params(opts);
    }
 
-   return this.session_api_call(IPlayerService, m_GetOwnedGames, "v1", params);
+   const {response} = await this.api_call<GetOwnedGames_response>(
+      IPlayerService,
+      m_GetOwnedGames,
+      "v1",
+      params
+   );
+
+   if (response === undefined) {
+      throw new Error("GetOwnedGames: response is undefined!");
+   }
+
+   return response.games;
 }
 
 export {GetOwnedGames};

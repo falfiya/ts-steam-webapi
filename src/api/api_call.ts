@@ -6,8 +6,8 @@ import {api_version} from "./api_version";
 
 const host = "api.steampowered.com";
 
-async function api_call(int: api_interface, met: api_method, ver: api_version, params: string):
-Promise<any>
+async function api_call<T>
+(int: api_interface, met: api_method, ver: api_version, params: string): Promise<T>
 {
    const url = `https://${host}/${int}/${met}/${ver}?${params}`;
    const res = await fetch(url);
@@ -16,11 +16,8 @@ Promise<any>
       err.name = `${res.status}, ${res.statusText}`;
       throw err;
    }
-   const obj = await res.json();
-   if (Object.keys(obj).length === 0) {
-      throw new Error("Response object is empty!");
-   }
-   return obj;
+
+   return res.json();
 }
 
 export {api_call};

@@ -1,14 +1,10 @@
-import {uint} from "../../core/numerals";
+import {o_response} from "../../shared/o_response";
 import {owned_game} from "./owned_game";
+import {owned_game_ex} from "./owned_game_ex";
+import {o_owned_games} from "./o_owned_games";
+import {o_game_count} from "./o_game_count";
 
-/**
- * Depending on the parameters in the API call, more fields will be added to
- * the objects within the `games` array. In order to represent this, this
- * response object will not be concerned about the exact type within `games`,
- * so long as it satisfies the base fields that the Steam Web API will always
- * respond with.
- */
-export interface GetOwnedGames_response<owned_game_t extends owned_game> {
-   game_count: uint;
-   games: owned_game_t[];
-};
+export type GetOwnedGames_response = o_response<
+   & o_game_count
+   & o_owned_games<owned_game | owned_game_ex>
+>;

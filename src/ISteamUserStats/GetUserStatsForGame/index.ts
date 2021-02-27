@@ -12,7 +12,7 @@ Promise<GetUserStatsForGame_response>
 {
    const params = `steamid=${user}&appid=${game_id}`;
 
-   return this.session_api_call(ISteamUserStats, GetUserStatsForGame_method, "v2", params);
+   return this.api_call(ISteamUserStats, GetUserStatsForGame_method, "v2", params);
 }
 
 export {GetUserStatsForGame};

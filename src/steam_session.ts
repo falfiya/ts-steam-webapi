@@ -30,10 +30,13 @@ export class steam_session {
       this.key = to_api_key(key);
    }
 
-   session_api_call(int: api_interface, met: api_method, ver: api_version, params: string):
-   Promise<any>
-   {
-      return api_call(int, met, ver, `key=${this.key}&${params}`);
+   api_call<T>(
+      int: api_interface,
+      met: api_method,
+      ver: api_version,
+      params: string
+   ) {
+      return api_call<T>(int, met, ver, `key=${this.key}&${params}`);
    };
 
    // IPlayerService

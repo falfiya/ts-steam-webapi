@@ -1,18 +1,25 @@
 import {steam_session} from "../../steam_session";
 import {steam_id} from "../../shared/steam_id";
 
-import {basic_response} from "../../api/basic_response";
-import {o_player_level} from "../o_player_level";
-
 import {IPlayerService} from "..";
 import {GetSteamLevel_method} from "./method";
+import {GetSteamLevel_response} from "./response";
 
-function GetSteamLevel(this: steam_session, user: steam_id):
-basic_response<o_player_level>
-{
+async function GetSteamLevel(this: steam_session, user: steam_id) {
    const params = `steamid=${user}`;
 
-   return this.session_api_call(IPlayerService, GetSteamLevel_method, "v1", params);
+   const {response} = await this.api_call<GetSteamLevel_response>(
+      IPlayerService,
+      GetSteamLevel_method,
+      "v1",
+      params
+   );
+
+   if (response === undefined) {
+      throw new Error("GetSteamLevel: response is undefined!");
+   }
+
+   return response.player_level;
 }
 
 export {GetSteamLevel};

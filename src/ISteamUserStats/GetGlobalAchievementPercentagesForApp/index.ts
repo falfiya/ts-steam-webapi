@@ -6,16 +6,19 @@ import {ISteamUserStats} from "..";
 import {api_call} from "../../api/api_call";
 import {GetGlobalAchievementPercentagesForApp_method} from "./method";
 
-function GetGlobalAchievementPercentagesForApp(game_id: app_id):
-Promise<GetGlobalAchievementPercentagesForApp_response>
-{
-   const params = `gameid=${game_id}`;
-   return api_call(
+async function GetGlobalAchievementPercentagesForApp(game_id: app_id) {
+   const {response} = await api_call<GetGlobalAchievementPercentagesForApp_response>(
       ISteamUserStats,
       GetGlobalAchievementPercentagesForApp_method,
       "v2",
-      params
+      `gameid=${game_id}`,
    );
+
+   if (response === undefined) {
+      throw new Error("GetGlobalAchievementPercentagesForApp: response is undefined!");
+   }
+
+   return response.achievementpercentages.achievements;
 }
 
 export {GetGlobalAchievementPercentagesForApp};

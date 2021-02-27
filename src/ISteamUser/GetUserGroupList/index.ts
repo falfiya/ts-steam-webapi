@@ -3,15 +3,21 @@ import {steam_id} from "../../shared/steam_id";
 
 import {ISteamUser} from "..";
 import {GetUserGroupList_method} from "./method";
-import {basic_response} from "../../api/basic_response";
 import {GetUserGroupList_response} from "./response";
 
-function GetUserGroupList(this: steam_session, user: steam_id):
-basic_response<GetUserGroupList_response>
-{
-   const params = `steamid=${user}`;
+async function GetUserGroupList(this: steam_session, user: steam_id) {
+   const {response} = await this.api_call<GetUserGroupList_response>(
+      ISteamUser,
+      GetUserGroupList_method,
+      "v1",
+      `steamid=${user}`
+   );
 
-   return this.session_api_call(ISteamUser, GetUserGroupList_method, "v1", params);
+   if (response === undefined) {
+      throw new Error("GetUserGroupList: response is undefined!");
+   }
+
+   return response.groups;
 }
 
 export {GetUserGroupList};
