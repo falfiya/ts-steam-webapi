@@ -1,7 +1,7 @@
 import {app_id} from "./app_id";
 import {app_image_id} from "./app_image_id";
-import {ct} from "./ct";
-import {or} from "./or";
+import {ct} from "../core/ct";
+import {primitive} from "../core/primitive";
 import {public_image} from "./public_image";
 
 export const app_image = ct("apps");
@@ -9,7 +9,7 @@ export type app_image<
    host extends string,
    app extends app_id,
    id extends app_image_id,
-> = `${public_image<host, `${typeof app_image}/${or<app, number>}/${or<id, string>}.jpg`>}`;
+> = `${public_image<host, `${typeof app_image}/${primitive<app>}/${primitive<id>}.jpg`>}`;
 
 export const make_app_image = <
    host extends string,

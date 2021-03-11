@@ -1,4 +1,5 @@
+import {final} from "./final";
 import {float} from "./numerals";
 
-declare const percent: unique symbol;
-export type percent = float & {readonly [percent]: void};
+export type percent_t = {readonly [final]: "percent"};
+export type percent = float & percent_t;

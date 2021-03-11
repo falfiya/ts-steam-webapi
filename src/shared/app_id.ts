@@ -1,4 +1,5 @@
+import {final} from "../core/final";
 import {uint} from "../core/numerals";
 
-declare const app_id: unique symbol;
-export type app_id = uint & {readonly [app_id]: void};
+export type app_id_t = {readonly [final]: "app_id"};
+export type app_id = uint & app_id_t;

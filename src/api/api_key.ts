@@ -1,5 +1,7 @@
-declare const api_key: unique symbol;
-export type api_key = string & {readonly [api_key]: void};
+import {final} from "../core/final";
+
+export type api_key_t = {readonly [final]: "api_key"};
+export type api_key = string & api_key_t;
 export const to_api_key = (s: string) => {
    const buf = Buffer.from(s, "hex");
 

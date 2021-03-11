@@ -1,13 +1,13 @@
 import {epoch} from "../core/epoch";
 import {app_id} from "../shared/app_id";
 import {avail_stat_links} from "./avail_stat_links";
-import {or} from "../shared/or";
+import {primitive} from "../core/primitive";
 
-export type scraped_game<game_id extends app_id = app_id> = {
-   appid: game_id;
+export type scraped_game<id extends app_id = app_id> = {
+   appid: id;
    name: string;
-   logo: `https://cdn.cloudflare.steamstatic.com/steam/apps/${or<game_id, number>}/capsule_184x69.jpg`;
-   friendlyURL: game_id;
+   logo: `https://cdn.cloudflare.steamstatic.com/steam/apps/${primitive<id>}/capsule_184x69.jpg`;
+   friendlyURL: id;
    availStatLinks: avail_stat_links;
    /// convertable to float
    hours?: string;

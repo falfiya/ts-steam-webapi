@@ -1,4 +1,5 @@
+import {final} from "../../core/final";
 import {uint} from "../../core/numerals";
 
-declare const quest_id: unique symbol;
-export type quest_id = uint & {readonly [quest_id]: void};
+export type quest_io_t = {readonly [final]: "quest_id"};
+export type quest_id = uint & quest_io_t;

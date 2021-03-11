@@ -1,3 +1,5 @@
-declare const game_stat_name: unique symbol;
+import {final} from "../core/final";
+
+export type game_stat_name_t = {readonly [final]: "game_stat_name"};
 /** This is a game-local statistic name */
-export type game_stat_name = string & {readonly [game_stat_name]: void};
+export type game_stat_name = string & game_stat_name_t;

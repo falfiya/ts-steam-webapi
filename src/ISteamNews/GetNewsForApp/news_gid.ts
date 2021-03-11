@@ -1,3 +1,4 @@
-declare const news_gid: unique symbol;
+import {final} from "../../core/final";
 
-export type news_gid = string & {readonly [news_gid]: void};
+export type news_gid_t = {readonly [final]: "news_gid"};
+export type news_gid = string & news_gid_t;

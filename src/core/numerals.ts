@@ -1,14 +1,18 @@
-/*
-As I said, way too many newtypes.
-These should be useful for people wanting to read this library to know what
-"actual" types are being used under the hood. It's also nice to know if your
-number is always positive, or if it's always an integer.
-*/
+declare const data_type: unique symbol;
 
-declare const numeral: unique symbol;
+type uint_t  = {[data_type]: "uint"};
+type int_t   = {[data_type]: "int"};
+type float_t = {[data_type]: "float"};
 
-enum numerals {uint, int, float};
+type uint  = number & uint_t;
+type int   = number & int_t;
+type float = number & float_t;
 
-export type uint  = number & {[numeral]: numerals.uint};
-export type int   = number & {[numeral]: numerals.float};
-export type float = number & {[numeral]: numerals.float};
+export {
+   uint_t,
+   uint,
+   int_t,
+   int,
+   float_t,
+   float,
+};

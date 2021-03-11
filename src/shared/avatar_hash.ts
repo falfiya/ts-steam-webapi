@@ -1,2 +1,4 @@
-declare const avatar_hash: unique symbol;
-export type avatar_hash = string & {readonly [avatar_hash]: void};
+import {final} from "../core/final";
+
+export type avatar_hash_t = {readonly [final]: "avatar_hash"};
+export type avatar_hash = string & avatar_hash_t;

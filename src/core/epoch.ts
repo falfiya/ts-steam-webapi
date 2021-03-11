@@ -1,8 +1,9 @@
+import {final} from "./final";
 import {uint} from "./numerals";
 
-declare const epoch: unique symbol;
+export type epoch_t = {readonly [final]: "epoch"};
 /** Unix Timestamp */
-export type epoch = uint & {readonly [epoch]: void};
+export type epoch = uint & epoch_t;
 
 export const to_date = (seconds: epoch) =>
    new Date(seconds * 1000);

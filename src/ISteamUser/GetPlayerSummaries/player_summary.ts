@@ -16,8 +16,8 @@ import {user_url} from "../../shared/user_url";
 
 export type player_summary<
    id extends steam_id,
-   a_byte extends avatar_hex_byte,
-   a_hash extends avatar_hash
+   byte extends avatar_hex_byte,
+   hash extends avatar_hash
 > = {
    steamid: id;
 
@@ -26,9 +26,9 @@ export type player_summary<
    personaname: string;
    profileurl: user_url<id>;
 
-   avatar: avatar<steamcdn_akami, a_byte, a_hash>;
-   avatarmedium: avatar<steamcdn_akami, a_byte, a_hash, "_medium">;
-   avatarfull: avatar<steamcdn_akami, a_byte, a_hash, "_full">;
+   avatar: avatar<steamcdn_akami, byte, hash>;
+   avatarmedium: avatar<steamcdn_akami, byte, hash, "_medium">;
+   avatarfull: avatar<steamcdn_akami, byte, hash, "_full">;
    avatarhash: avatar_hash;
 
    lastlogoff: epoch;
