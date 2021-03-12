@@ -1,5 +1,9 @@
 import {final} from "./final";
-import {uint} from "./numerals";
+import {unique_object} from "./newtype";
+import {uint} from "./data_types";
 
-export type minutes_t = {readonly [final]: "minutes"};
+type minutes_t = {
+   [final]: "minutes";
+   [unique_object]: minutes_t;
+};
 export type minutes = uint & minutes_t;

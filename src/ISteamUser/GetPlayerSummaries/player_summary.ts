@@ -3,15 +3,15 @@ import {steam_id} from "../../shared/steam_id";
 import {community_visibility_state} from "./community_visibility_state";
 import {profile_has_been_configured} from "./profile_has_been_configured";
 
-import {avatar_hash} from "../../shared/avatar_hash";
+import {avatar_hash} from "../avatar_hash";
 
 import {epoch} from "../../core/epoch";
 import {persona_state} from "./persona_state";
 import {clan_id} from "./clan_id";
 import {persona_state_flags} from "./persona_state_flags";
 import {steamcdn_akami} from "../../shared/steamcdn_akami";
-import {avatar_hex_byte} from "../../shared/avatar_hex_byte";
-import {avatar} from "../../shared/avatar";
+import {avatar_hex_byte} from "../avatar_hex_byte";
+import {avatar} from "../avatar";
 import {user_url} from "../../shared/user_url";
 
 export type player_summary<

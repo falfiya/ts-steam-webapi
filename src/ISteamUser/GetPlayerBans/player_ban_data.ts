@@ -1,5 +1,5 @@
 import {steam_id} from "../../shared/steam_id";
-import {uint} from "../../core/numerals";
+import {uint} from "../../core/data_types";
 
 export type player_ban_data = {
    SteamId: steam_id;

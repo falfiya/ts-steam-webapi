@@ -1,4 +1,4 @@
-import {uint} from "../../core/numerals";
+import {uint} from "../../core/data_types";
 import {community_item_id} from "./community_item_id";
 
 export type badge = {

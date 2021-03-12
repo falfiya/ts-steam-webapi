@@ -1,5 +1,9 @@
 import {final} from "../../core/final";
-import {uint} from "../../core/numerals";
+import {unique_object} from "../../core/newtype";
+import {uint} from "../../core/data_types";
 
-export type quest_io_t = {readonly [final]: "quest_id"};
-export type quest_id = uint & quest_io_t;
+type quest_id_t = {
+   [final]: "quest_id";
+   [unique_object]: quest_id_t;
+};
+export type quest_id = uint & quest_id_t;

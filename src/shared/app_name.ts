@@ -1,4 +1,8 @@
 import {final} from "../core/final";
+import {unique_object} from "../core/newtype";
 
-export type app_name_t = {readonly [final]: "app_name"};
+type app_name_t = {
+   [final]: "app_name";
+   [unique_object]: app_name_t;
+};
 export type app_name = string & app_name_t;

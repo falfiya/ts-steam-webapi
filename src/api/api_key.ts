@@ -1,7 +1,12 @@
 import {final} from "../core/final";
+import {unique_object} from "../core/newtype";
 
-export type api_key_t = {readonly [final]: "api_key"};
+type api_key_t = {
+   [final]: "api_key";
+   [unique_object]: api_key_t;
+};
 export type api_key = string & api_key_t;
+
 export const to_api_key = (s: string) => {
    const buf = Buffer.from(s, "hex");
 

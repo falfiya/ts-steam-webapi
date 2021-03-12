@@ -1,4 +1,4 @@
-import {uint} from "../../core/numerals";
+import {uint} from "../../core/data_types";
 
 export type o_player_xp = {
    player_xp: uint;

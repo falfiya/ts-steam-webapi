@@ -1,6 +1,10 @@
 import {final} from "../../core/final";
+import {unique_object} from "../../core/newtype";
 
-export type clan_id_t = {readonly [final]: "clan_id"};
+type clan_id_t = {
+   [final]: "clan_id";
+   [unique_object]: clan_id_t;
+};
 /**
  * String that when parsed, only the lowest 32 bits matter.
  * 103582791429521408 is returned for invalid

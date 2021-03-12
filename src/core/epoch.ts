@@ -1,7 +1,11 @@
 import {final} from "./final";
-import {uint} from "./numerals";
+import {unique_object} from "./newtype";
+import {uint} from "./data_types";
 
-export type epoch_t = {readonly [final]: "epoch"};
+type epoch_t = {
+   [final]: "epoch";
+   [unique_object]: epoch_t;
+};
 /** Unix Timestamp */
 export type epoch = uint & epoch_t;
 

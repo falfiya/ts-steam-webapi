@@ -1,6 +1,6 @@
 import {steam_session} from "../../steam_session";
 import {steam_id} from "../../shared/steam_id";
-import {uint} from "../../core/numerals";
+import {uint} from "../../core/data_types";
 
 import {IPlayerService} from "..";
 import {api_method} from "../../api/api_method";

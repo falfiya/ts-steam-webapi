@@ -1,5 +1,5 @@
 import {epoch} from "../../core/epoch";
-import {uint} from "../../core/numerals";
+import {uint} from "../../core/data_types";
 
 export type GetNewsForApp_options = {
    max_length?: uint;

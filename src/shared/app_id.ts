@@ -1,5 +1,9 @@
 import {final} from "../core/final";
-import {uint} from "../core/numerals";
+import {unique_object} from "../core/newtype";
+import {uint} from "../core/data_types";
 
-export type app_id_t = {readonly [final]: "app_id"};
+type app_id_t = {
+   [final]: "app_id",
+   [unique_object]: app_id_t;
+};
 export type app_id = uint & app_id_t;

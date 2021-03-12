@@ -6,6 +6,10 @@
 // type _avatar_hex_byte = `${_hex}${_hex}`;
 
 import {final} from "../core/final";
+import {unique_object} from "../core/newtype";
 
-export type avatar_hex_byte_t = {readonly [final]: "avatar_hex_byte"};
+type avatar_hex_byte_t = {
+   [final]: "avatar_hex_byte";
+   [unique_object]: avatar_hex_byte_t;
+};
 export type avatar_hex_byte = string & avatar_hex_byte_t

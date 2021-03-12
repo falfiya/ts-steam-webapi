@@ -2,7 +2,7 @@ import {achievement_name} from "../achievement_name";
 import {steamcdn_akami} from "../../shared/steamcdn_akami";
 import {app_id} from "../../shared/app_id";
 import {app_image_id} from "../../shared/app_image_id";
-import {app_image} from "../../shared/app_image";
+import {app_image} from "../app_image";
 
 export type game_achievement<
    game_id extends app_id,
