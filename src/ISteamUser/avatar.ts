@@ -8,7 +8,7 @@ export type avatar_size = "" | "_medium" | "_full";
 const avatars = "avatars";
 type  avatars = typeof avatars;
 
-export type  avatar<
+export type avatar<
    host extends string,
    byte extends avatar_hex_byte,
    hash extends avatar_hash,

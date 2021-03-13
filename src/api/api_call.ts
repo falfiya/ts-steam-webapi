@@ -4,12 +4,11 @@ import {api_interface} from "./api_interface";
 import {api_method} from "./api_method";
 import {api_version} from "./api_version";
 
-const host = "api.steampowered.com";
-
 async function api_call<T>
 (int: api_interface, met: api_method, ver: api_version, params: string): Promise<T>
 {
-   const url = `https://${host}/${int}/${met}/${ver}?${params}`;
+   /** you know, this should really have a better type than string */
+   const url = `https://api.steampowered.com/${int}/${met}/${ver}?${params}`;
    const res = await fetch(url);
    if (res.status !== 200) {
       const err = new Error(render_html(await res.text()));
