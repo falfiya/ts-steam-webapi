@@ -18,7 +18,7 @@ const lib_min_js_config = {
       format: "cjs",
 
       strict: true,
-      sourcemap: true,
+      // sourcemap: true,
    },
 
    plugins: [
