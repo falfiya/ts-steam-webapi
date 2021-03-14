@@ -1,9 +1,9 @@
 import {final} from "../core/final";
-import {unique_object} from "../core/newtype";
+import {unique_symbol} from "../core/newtype";
 
 type api_key_t = {
    [final]: "api_key";
-   [unique_object]: api_key_t;
+   [unique_symbol]: api_key_t;
 };
 export type api_key = string & api_key_t;
 

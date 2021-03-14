@@ -1,11 +1,11 @@
-import {steam_session} from "../../steam_session";
+import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 
 import {IPlayerService} from "..";
 import {api_method} from "../../api/api_method";
 
 const method = "GetSteamLevel" as api_method;
-async function GetSteamLevel(this: steam_session, user: steam_id) {
+async function GetSteamLevel(this: isteam_session, user: steam_id) {
    const params = `steamid=${user}`;
 
    const {response} = await this.api_call<import("./res")>(

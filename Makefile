@@ -4,6 +4,9 @@ build~debug:
 build~release:
 	npx rollup -c
 
+run: build~debug
+	node bin/main
+
 check:
 	npx tsc --noEmit
 

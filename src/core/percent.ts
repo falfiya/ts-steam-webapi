@@ -1,9 +1,9 @@
 import {final} from "./final";
-import {unique_object} from "./newtype";
+import {unique_symbol} from "./newtype";
 import {float} from "./data_types";
 
 type percent_t = {
    [final]: "percent";
-   [unique_object]: percent_t;
+   [unique_symbol]: percent_t;
 };
 export type percent = float & percent_t;

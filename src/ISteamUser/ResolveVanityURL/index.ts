@@ -1,4 +1,4 @@
-import {steam_session} from "../../steam_session";
+import {isteam_session} from "../../shared/isteam_session";
 
 import {ISteamUser} from "..";
 import {api_method} from "../../api/api_method";
@@ -6,7 +6,7 @@ import {res, is_err} from "./res";
 
 const method = "ResolveVanityURL" as api_method;
 
-async function ResolveVanityURL(this: steam_session, vanity_url: string) {
+async function ResolveVanityURL(this: isteam_session, vanity_url: string) {
    const {response} = await this.api_call<res>(
       ISteamUser,
       method,

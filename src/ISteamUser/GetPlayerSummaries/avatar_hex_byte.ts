@@ -5,11 +5,11 @@
 //    | 'a' | 'b' | 'c' | 'd' | 'e' | 'f';
 // type _avatar_hex_byte = `${_hex}${_hex}`;
 
-import {final} from "../core/final";
-import {unique_object} from "../core/newtype";
+import {final} from "../../core/final";
+import {unique_symbol} from "../../core/newtype";
 
 type avatar_hex_byte_t = {
    [final]: "avatar_hex_byte";
-   [unique_object]: avatar_hex_byte_t;
+   [unique_symbol]: avatar_hex_byte_t;
 };
 export type avatar_hex_byte = string & avatar_hex_byte_t

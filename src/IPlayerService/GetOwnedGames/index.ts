@@ -1,5 +1,5 @@
 // function params
-import {steam_session} from "../../steam_session";
+import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 import {GetOwnedGames_options} from "./options";
 
@@ -28,7 +28,7 @@ function GetOwnedGames(
 ):
 Promise<owned_game_ex[]>;
 
-async function GetOwnedGames(this: steam_session, user: steam_id, opts?: GetOwnedGames_options):
+async function GetOwnedGames(this: isteam_session, user: steam_id, opts?: GetOwnedGames_options):
 Promise<(owned_game | owned_game_ex)[]>
 {
    var params = `steamid=${user}`;

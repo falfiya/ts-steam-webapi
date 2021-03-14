@@ -1,4 +1,4 @@
-import {steam_session} from "../../steam_session";
+import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 import {app_id} from "../../shared/app_id";
 
@@ -8,7 +8,7 @@ import {res, is_err} from "./res";
 const method = "GetPlayerAchievements" as api_method;
 
 // the API has another parameter `l` but I'm pretty sure it does nothing
-async function GetPlayerAchievements(this: steam_session, user: steam_id, game_id: app_id) {
+async function GetPlayerAchievements(this: isteam_session, user: steam_id, game_id: app_id) {
    const params = `steamid=${user}&appid=${game_id}`;
 
    const {playerstats} = await this.api_call<res>(

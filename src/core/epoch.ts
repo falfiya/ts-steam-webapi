@@ -1,16 +1,18 @@
 import {final} from "./final";
-import {unique_object} from "./newtype";
+import {unique_symbol} from "./newtype";
 import {uint} from "./data_types";
 
 type epoch_t = {
    [final]: "epoch";
-   [unique_object]: epoch_t;
+   [unique_symbol]: epoch_t;
 };
 /** Unix Timestamp */
-export type epoch = uint & epoch_t;
+type epoch = uint & epoch_t;
 
-export const to_date = (seconds: epoch) =>
+const to_date = (seconds: epoch) =>
    new Date(seconds * 1000);
 
-export const from_date = (epoch: Date) =>
+const from_date = (epoch: Date) =>
    epoch.getTime() / 1000;
+
+export {epoch, to_date, from_date};

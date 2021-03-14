@@ -1,15 +1,26 @@
-import {steamcommunity} from "./steamcommunity";
+import {unwrap} from "../core/newtype";
+import {h_steamcommunity} from "./http_hosts";
+import {url_concat} from "./url_concat";
 import {steam_id} from "./steam_id";
-import {primitive} from "../core/primitive";
 
-const profiles = join(steamcommunity, "profiles");
+const profiles = url_concat(h_steamcommunity, "profiles");
 type  profiles = typeof profiles;
 
-type  profile_url<id extends steam_id> = `${typeof profile_url}/${primitive<id>}`;
+const id = url_concat(h_steamcommunity, "id");
+type  id = typeof id;
 
-const id_url = join(steamcommunity, "id");
-type  id_url<vanity extends string> = `${typeof id_url}/${primitive<vanity>}`;
+type profile_url<user_id extends steam_id> = `${profiles}/${unwrap<user_id>}`;
 
-export type user_url<id extends steam_id = steam_id, vanity extends string = string> =
+const profile_url = <user_id extends steam_id>(user_id: user_id) =>
+   `${profiles}/${user_id}` as profile_url<user_id>;
+
+type vanity_url<vanity extends string> = `${id}/${vanity}`;
+
+const vanity_url = <vanity extends string>(vanity: vanity) =>
+   `${id}/${vanity}` as vanity_url<vanity>;
+
+type user_url<id extends steam_id, vanity extends string> =
    | profile_url<id>
-   | id_url<vanity>;
+   | vanity_url<vanity>;
+
+export {profile_url, vanity_url, user_url};

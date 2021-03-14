@@ -1,11 +1,11 @@
-import {steam_session} from "../../steam_session";
+import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 
 import {ISteamUser} from "..";
 import {api_method} from "../../api/api_method";
 const method = "GetPlayerSummaries" as api_method;
 
-async function GetPlayerSummaries(this: steam_session, users: steam_id[]) {
+async function GetPlayerSummaries(this: isteam_session, users: steam_id[]) {
    const params = `steamids=${users.join(',')}`;
 
    const {response} = await this.api_call<import("./res")>(
