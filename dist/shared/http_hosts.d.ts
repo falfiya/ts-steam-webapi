@@ -1,0 +1,10 @@
+import { https } from "./http_host";
+declare const h_steamcdn_akamihd: https<"steamcdn-a.akamaihd.net">;
+declare type h_steamcdn_akamihd = typeof h_steamcdn_akamihd;
+declare const h_media_steampowered: https<"media.steampowered.com">;
+declare type h_media_steampowered = typeof h_media_steampowered;
+declare const h_steamcommunity: https<"steamcommunity.com">;
+declare type h_steamcommunity = typeof h_steamcommunity;
+declare const h_cf_steamstatic: https<"cdn.cloudflare.steamstatic.com">;
+declare type h_cf_steamstatic = typeof h_cf_steamstatic;
+export { h_steamcdn_akamihd, h_media_steampowered, h_steamcommunity, h_cf_steamstatic, };

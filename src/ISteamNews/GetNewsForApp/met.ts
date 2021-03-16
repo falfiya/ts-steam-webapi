@@ -9,14 +9,20 @@ import {res} from "./res";
 
 const method = "GetNewsForApp" as api_method;
 
-function GetNewsForApp<id extends app_id>(app_id: id, opts?: opts) {
+async function GetNewsForApp<id extends app_id>(app_id: id, opts?: opts) {
    var params = `appid=${app_id}`;
 
    if (opts !== undefined) {
       params += opts_to_params(opts);
    }
 
-   return api_call<res<id>>(ISteamNews, method, "v2", params);
+   const {appnews} = await api_call<res<id>>(ISteamNews, method, "v2", params);
+
+   if (appnews == undefined) {
+      throw new Error("GetNewsForApp: appnews is undefined!");
+   }
+
+   return appnews.newsitems;
 }
 
 export {GetNewsForApp};

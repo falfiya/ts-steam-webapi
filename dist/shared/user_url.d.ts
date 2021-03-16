@@ -1,0 +1,12 @@
+import { unwrap } from "../core/newtype";
+import { steam_id } from "./steam_id";
+declare const profiles: "https://steamcommunity.com/profiles";
+declare type profiles = typeof profiles;
+declare const id: "https://steamcommunity.com/id";
+declare type id = typeof id;
+declare type profile_url<user_id extends steam_id> = `${profiles}/${unwrap<user_id>}`;
+declare const profile_url: <user_id extends steam_id>(user_id: user_id) => `https://steamcommunity.com/profiles/${unwrap<user_id>}`;
+declare type vanity_url<vanity extends string> = `${id}/${vanity}`;
+declare const vanity_url: <vanity extends string>(vanity: vanity) => `https://steamcommunity.com/id/${vanity}`;
+declare type user_url<id extends steam_id, vanity extends string> = profile_url<id> | vanity_url<vanity>;
+export { profile_url, vanity_url, user_url };

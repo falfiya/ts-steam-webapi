@@ -1,0 +1,38 @@
+import { session } from "./shared/session";
+import { api_key } from "./api/api_key";
+import { api_interface } from "./api/api_interface";
+import { api_method } from "./api/api_method";
+import { api_version } from "./api/api_version";
+import { GetRecentlyPlayedGames } from "./IPlayerService/GetRecentlyPlayedGames/met";
+import { GetOwnedGames } from "./IPlayerService/GetOwnedGames/met";
+import { GetSteamLevel } from "./IPlayerService/GetSteamLevel/met";
+import { GetBadges } from "./IPlayerService/GetBadges/met";
+import { GetCommunityBadgeProgress } from "./IPlayerService/GetCommunityBadgeProgress/met";
+import { GetNewsForApp } from "./ISteamNews/GetNewsForApp/met";
+import { GetFriendList } from "./ISteamUser/GetFriendList/met";
+import { GetPlayerBans } from "./ISteamUser/GetPlayerBans/met";
+import { GetPlayerSummaries } from "./ISteamUser/GetPlayerSummaries/met";
+import { GetUserGroupList } from "./ISteamUser/GetUserGroupList/met";
+import { ResolveVanityURL } from "./ISteamUser/ResolveVanityURL/met";
+import { GetPlayerAchievements } from "./ISteamUserStats/GetPlayerAchievements/met";
+import { GetSchemaForGame } from "./ISteamUserStats/GetSchemaForGame/met";
+import { GetUserStatsForGame } from "./ISteamUserStats/GetUserStatsForGame/met";
+export declare class steam_session implements session {
+    key: api_key;
+    constructor(key: string);
+    api_call<T>(int: api_interface, met: api_method, ver: api_version, params: string): Promise<T>;
+    GetRecentlyPlayedGames: typeof GetRecentlyPlayedGames;
+    GetOwnedGames: typeof GetOwnedGames;
+    GetSteamLevel: typeof GetSteamLevel;
+    GetBadges: typeof GetBadges;
+    GetCommunityBadgeProgress: typeof GetCommunityBadgeProgress;
+    GetNewsForApp: typeof GetNewsForApp;
+    GetFriendList: typeof GetFriendList;
+    GetPlayerBans: typeof GetPlayerBans;
+    GetPlayerSummaries: typeof GetPlayerSummaries;
+    GetUserGroupList: typeof GetUserGroupList;
+    ResolveVanityURL: typeof ResolveVanityURL;
+    GetPlayerAchievements: typeof GetPlayerAchievements;
+    GetSchemaForGame: typeof GetSchemaForGame;
+    GetUserStatsForGame: typeof GetUserStatsForGame;
+}
