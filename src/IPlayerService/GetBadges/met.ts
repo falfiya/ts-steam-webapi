@@ -23,3 +23,4 @@ async function GetBadges(this: session, user: steam_id) {
 }
 
 export {GetBadges};
+

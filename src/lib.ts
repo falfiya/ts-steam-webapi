@@ -26,7 +26,7 @@ export * as ISteamUserStats from "./ISteamUserStats";
 // no API key needed
 export {GetGlobalAchievementPercentagesForApp} from "./ISteamUserStats/GetGlobalAchievementPercentagesForApp/met";
 export {GetNumberOfCurrentPlayers} from "./ISteamUserStats/GetNumberOfCurrentPlayers/met";
-export {GetScrapedGames} from "./Web/GetScrapedGames";
+export {GetScrapedGames} from "./Web/GetScrapedGames/met";
 
 // API key needed
 export {steam_session} from "./steam_session";

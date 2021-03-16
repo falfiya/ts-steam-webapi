@@ -5,6 +5,8 @@ import {ISteamNews} from "../interface";
 import {api_call} from "../../api/api_call";
 import {api_method} from "../../api/api_method";
 
+import {res} from "./res";
+
 const method = "GetNewsForApp" as api_method;
 
 function GetNewsForApp<id extends app_id>(app_id: id, opts?: opts) {
@@ -14,7 +16,7 @@ function GetNewsForApp<id extends app_id>(app_id: id, opts?: opts) {
       params += opts_to_params(opts);
    }
 
-   return api_call<import("./res")<id>>(ISteamNews, method, "v2", params);
+   return api_call<res<id>>(ISteamNews, method, "v2", params);
 }
 
 export {GetNewsForApp};

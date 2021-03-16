@@ -6,6 +6,6 @@ type app_id_t = {
    [unique_symbol]: app_id_t;
 };
 type app_id = uint & app_id_t;
-const app_id = <id extends uint>(id: id) => id as id & app_id;
+const app_id = <id extends uint>(id: id) => id as id & app_id_t;
 
 export {app_id};

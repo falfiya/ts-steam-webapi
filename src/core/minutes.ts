@@ -6,6 +6,6 @@ type minutes_t = {
    [unique_symbol]: minutes_t;
 };
 type minutes = uint & minutes_t;
-const minutes = <min extends uint>(min: min) => min as min & minutes;
+const minutes = <min extends uint>(min: min) => min as min & minutes_t;
 
 export {minutes};

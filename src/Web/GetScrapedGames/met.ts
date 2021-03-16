@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
-import {steam_id} from "../shared/steam_id";
+import {steam_id} from "../../shared/steam_id";
 
-import {user_url} from "../shared/user_url";
+import {user_url} from "../../shared/user_url";
 import {scraped_game} from "./scraped_game";
 
 const RG_GAMES_START = "var rgGames = ";

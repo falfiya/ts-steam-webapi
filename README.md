@@ -6,7 +6,6 @@ This library is an obsessively typed frontend to the Steam Web API.
 At times, it might look like it goes overboard with types but that's pretty much
 the entire point.
 
-
 ## Install
 
 This library is not published on npm yet but you can still install it:

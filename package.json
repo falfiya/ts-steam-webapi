@@ -1,6 +1,6 @@
 {
    "name": "ts-steam-webapi",
-   "version": "0.4.8",
+   "version": "1.0.0-alpha",
    "author": "coalpha",
    "main": "dist/lib.min.js",
    "types": "dist/lib.min.d.ts",
