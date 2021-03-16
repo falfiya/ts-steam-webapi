@@ -1,2 +1,2 @@
 // get badges
-export * as GetBadges from "./GetBadges";
+export * as GetBadges from "./GetBadges/met";

@@ -21,8 +21,8 @@ export {user_url} from "./shared/user_url";
 // IPlayerService
 export * as IPlayerService from "./IPlayerService";
 
-export {GetGlobalAchievementPercentagesForApp} from "./ISteamUserStats/GetGlobalAchievementPercentagesForApp";
-export {GetNumberOfCurrentPlayers} from "./ISteamUserStats/GetNumberOfCurrentPlayers";
+export {GetGlobalAchievementPercentagesForApp} from "./ISteamUserStats/GetGlobalAchievementPercentagesForApp/met";
+export {GetNumberOfCurrentPlayers} from "./ISteamUserStats/GetNumberOfCurrentPlayers/met";
 export {GetScrapedGames} from "./Web/GetScrapedGames";
 
 export {steam_session} from "./steam_session";

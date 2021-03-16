@@ -7,26 +7,26 @@ import {api_method} from "./api/api_method";
 import {api_version} from "./api/api_version";
 
 // IPlayerService
-import {GetRecentlyPlayedGames} from "./IPlayerService/GetRecentlyPlayedGames";
-import {GetOwnedGames} from "./IPlayerService/GetOwnedGames";
-import {GetSteamLevel} from "./IPlayerService/GetSteamLevel";
-import {GetBadges} from "./IPlayerService/GetBadges";
-import {GetCommunityBadgeProgress} from "./IPlayerService/GetCommunityBadgeProgress";
+import {GetRecentlyPlayedGames} from "./IPlayerService/GetRecentlyPlayedGames/met";
+import {GetOwnedGames} from "./IPlayerService/GetOwnedGames/met";
+import {GetSteamLevel} from "./IPlayerService/GetSteamLevel/met";
+import {GetBadges} from "./IPlayerService/GetBadges/met";
+import {GetCommunityBadgeProgress} from "./IPlayerService/GetCommunityBadgeProgress/met";
 
 // ISteamNews
-import {GetNewsForApp} from "./ISteamNews/GetNewsForApp";
+import {GetNewsForApp} from "./ISteamNews/GetNewsForApp/met";
 
 // ISteamUser
-import {GetFriendList} from "./ISteamUser/GetFriendList";
-import {GetPlayerBans} from "./ISteamUser/GetPlayerBans";
-import {GetPlayerSummaries} from "./ISteamUser/GetPlayerSummaries";
-import {GetUserGroupList} from "./ISteamUser/GetUserGroupList";
-import {ResolveVanityURL} from "./ISteamUser/ResolveVanityURL";
+import {GetFriendList} from "./ISteamUser/GetFriendList/met";
+import {GetPlayerBans} from "./ISteamUser/GetPlayerBans/met";
+import {GetPlayerSummaries} from "./ISteamUser/GetPlayerSummaries/met";
+import {GetUserGroupList} from "./ISteamUser/GetUserGroupList/met";
+import {ResolveVanityURL} from "./ISteamUser/ResolveVanityURL/met";
 
 // ISteamUserStats
-import {GetPlayerAchievements} from "./ISteamUserStats/GetPlayerAchievements";
-import {GetSchemaForGame} from "./ISteamUserStats/GetSchemaForGame";
-import {GetUserStatsForGame} from "./ISteamUserStats/GetUserStatsForGame";
+import {GetPlayerAchievements} from "./ISteamUserStats/GetPlayerAchievements/met";
+import {GetSchemaForGame} from "./ISteamUserStats/GetSchemaForGame/met";
+import {GetUserStatsForGame} from "./ISteamUserStats/GetUserStatsForGame/met";
 
 export class steam_session implements isteam_session {
    key: api_key;
