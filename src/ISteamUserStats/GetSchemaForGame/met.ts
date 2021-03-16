@@ -2,7 +2,7 @@ import {isteam_session} from "../../shared/isteam_session";
 import {app_id} from "../../shared/app_id";
 import {l10n} from "./l10n";
 
-import {ISteamUserStats} from "..";
+import {ISteamUserStats} from "../interface";
 import {api_method} from "../../api/api_method";
 const method = "GetSchemaForGame" as api_method;
 

@@ -18,11 +18,15 @@ export {ih_steamcdn_akamihd, ih_media_steampowered} from "./shared/image_hosts";
 export {steam_id} from "./shared/steam_id";
 export {user_url} from "./shared/user_url";
 
-// IPlayerService
 export * as IPlayerService from "./IPlayerService";
+export * as ISteamNews from "./ISteamNews";
+export * as ISteamUser from "./ISteamUser";
+export * as ISteamUserStats from "./ISteamUserStats";
 
+// no API key needed
 export {GetGlobalAchievementPercentagesForApp} from "./ISteamUserStats/GetGlobalAchievementPercentagesForApp/met";
 export {GetNumberOfCurrentPlayers} from "./ISteamUserStats/GetNumberOfCurrentPlayers/met";
 export {GetScrapedGames} from "./Web/GetScrapedGames";
 
+// API key needed
 export {steam_session} from "./steam_session";

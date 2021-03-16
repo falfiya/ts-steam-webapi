@@ -1,6 +1,6 @@
 import {isteam_session} from "../../shared/isteam_session";
 
-import {ISteamUser} from "..";
+import {ISteamUser} from "../interface";
 import {api_method} from "../../api/api_method";
 import {res, is_err} from "./res";
 

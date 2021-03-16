@@ -1,7 +1,7 @@
 import {app_id} from "../../shared/app_id";
 import {GetNewsForApp_options, opts_to_params} from "./options";
 
-import {ISteamNews} from "..";
+import {ISteamNews} from "../interface";
 import {api_call} from "../../api/api_call";
 import {api_method} from "../../api/api_method";
 

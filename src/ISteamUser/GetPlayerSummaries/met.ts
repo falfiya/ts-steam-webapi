@@ -1,7 +1,7 @@
 import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 
-import {ISteamUser} from "..";
+import {ISteamUser} from "../interface";
 import {api_method} from "../../api/api_method";
 import {player_summary} from "./player_summary";
 

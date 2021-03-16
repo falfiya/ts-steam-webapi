@@ -2,7 +2,7 @@ import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 import {user_relationship} from "./user_relationship";
 
-import {ISteamUser} from "..";
+import {ISteamUser} from "../interface";
 import {api_method} from "../../api/api_method";
 const method = "GetFriendList" as api_method;
 

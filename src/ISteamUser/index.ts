@@ -1,3 +1,4 @@
-import {api_interface} from "../api/api_interface";
-
-export const ISteamUser: api_interface = "ISteamUser";
+export * as GetFriendList from "./GetFriendList";
+export * as GetPlayerBans from "./GetPlayerBans";
+export * as GetPlayerSummaries from "./GetPlayerSummaries";
+export * as GetUserGroupList from "./GetUserGroupList";

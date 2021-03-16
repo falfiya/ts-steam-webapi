@@ -2,7 +2,7 @@ import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 import {app_id} from "../../shared/app_id";
 
-import {ISteamUserStats} from "..";
+import {ISteamUserStats} from "../interface";
 import {api_method} from "../../api/api_method";
 const method = "GetUserStatsForGame" as api_method;
 

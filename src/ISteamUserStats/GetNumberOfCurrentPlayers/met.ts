@@ -1,7 +1,7 @@
 import {app_id} from "../../shared/app_id";
 
 import {api_call} from "../../api/api_call";
-import {ISteamUserStats} from "..";
+import {ISteamUserStats} from "../interface";
 import {api_method} from "../../api/api_method";
 
 const method = "GetNumberOfCurrentPlayers" as api_method;

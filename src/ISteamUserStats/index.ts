@@ -1,3 +1,5 @@
-import {api_interface} from "../api/api_interface";
-
-export const ISteamUserStats: api_interface = "ISteamUserStats";
+export * as GetGlobalAchievementPercentagesForApp from "./GetGlobalAchievementPercentagesForApp";
+export * as GetNumberOfCurrentPlayers from "./GetNumberOfCurrentPlayers";
+export * as GetPlayerAchievements from "./GetPlayerAchievements";
+export * as GetSchemaForGame from "./GetSchemaForGame";
+export * as GetUserStatsForGame from "./GetUserStatsForGame";
