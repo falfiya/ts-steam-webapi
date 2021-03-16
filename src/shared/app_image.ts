@@ -10,7 +10,7 @@ export type app_image<
    host extends image_host,
    app extends app_id,
    id extends app_image_id,
-> = `${unwrap<image_host>}${apps}/${unwrap<app>}/${unwrap<id>}.jpg`;
+> = `${unwrap<image_host>}/${apps}/${unwrap<app>}/${unwrap<id>}.jpg`;
 
 export const app_image = <
    host extends image_host,

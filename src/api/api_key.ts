@@ -5,9 +5,9 @@ type api_key_t = {
    [final]: "api_key";
    [unique_symbol]: api_key_t;
 };
-export type api_key = string & api_key_t;
+type api_key = string & api_key_t;
 
-export const to_api_key = (s: string) => {
+const api_key = (s: string) => {
    const buf = Buffer.from(s, "hex");
 
    if (buf.toString("hex").toLowerCase() !== s.toLowerCase()) {
@@ -20,3 +20,5 @@ export const to_api_key = (s: string) => {
 
    return s as api_key;
 };
+
+export {api_key};

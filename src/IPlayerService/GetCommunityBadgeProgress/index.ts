@@ -1,7 +1,7 @@
 import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 
-import {IPlayerService} from "..";
+import {IPlayerService} from "../interface";
 import {api_method} from "../../api/api_method";
 const method = "GetCommunityBadgeProgress" as api_method;
 

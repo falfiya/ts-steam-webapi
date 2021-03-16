@@ -2,7 +2,7 @@ import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 import {uint} from "../../core/data_types";
 
-import {IPlayerService} from "..";
+import {IPlayerService} from "../interface";
 import {api_method} from "../../api/api_method";
 const method = "GetRecentlyPlayedGames" as api_method;
 

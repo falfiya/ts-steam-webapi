@@ -15,10 +15,10 @@ import {user_url} from "../../shared/user_url";
 import {ih_steamcdn_akamihd} from "../../shared/image_hosts";
 
 export type player_summary<
-   id extends steam_id,
-   byte extends avatar_hex_byte,
-   hash extends avatar_hash,
-   vanity extends string,
+   id extends steam_id = steam_id,
+   byte extends avatar_hex_byte = avatar_hex_byte,
+   hash extends avatar_hash = avatar_hash,
+   vanity extends string = string,
 > = {
    steamid: id;
 

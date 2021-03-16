@@ -1,3 +1,2 @@
-import {api_interface} from "../api/api_interface";
-
-export const IPlayerService: api_interface = "IPlayerService";
+// get badges
+export * as GetBadges from "./GetBadges";

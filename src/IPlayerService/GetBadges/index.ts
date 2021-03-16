@@ -1,7 +1,7 @@
 import {isteam_session} from "../../shared/isteam_session";
 import {steam_id} from "../../shared/steam_id";
 
-import {IPlayerService} from "..";
+import {IPlayerService} from "../interface";
 import {api_method} from "../../api/api_method";
 const method = "GetBadges" as api_method;
 
@@ -23,3 +23,8 @@ async function GetBadges(this: isteam_session, user: steam_id) {
 }
 
 export {GetBadges};
+
+export {badge} from "./badge";
+export {community_item_id} from "./community_item_id";
+export {o_badges} from "./o_badges";
+export {o_player_xp} from "./o_player_xp";

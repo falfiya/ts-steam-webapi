@@ -1,5 +1,6 @@
 import {isteam_session} from "./shared/isteam_session";
-import {api_key, to_api_key} from "./api/api_key";
+
+import {api_key} from "./api/api_key";
 import {api_call} from "./api/api_call";
 import {api_interface} from "./api/api_interface";
 import {api_method} from "./api/api_method";
@@ -11,6 +12,9 @@ import {GetOwnedGames} from "./IPlayerService/GetOwnedGames";
 import {GetSteamLevel} from "./IPlayerService/GetSteamLevel";
 import {GetBadges} from "./IPlayerService/GetBadges";
 import {GetCommunityBadgeProgress} from "./IPlayerService/GetCommunityBadgeProgress";
+
+// ISteamNews
+import {GetNewsForApp} from "./ISteamNews/GetNewsForApp";
 
 // ISteamUser
 import {GetFriendList} from "./ISteamUser/GetFriendList";
@@ -28,7 +32,7 @@ export class steam_session implements isteam_session {
    key: api_key;
 
    constructor (key: string) {
-      this.key = to_api_key(key);
+      this.key = api_key(key);
    }
 
    api_call<T>(
@@ -51,6 +55,10 @@ export class steam_session implements isteam_session {
    GetBadges;
    GetCommunityBadgeProgress=
    GetCommunityBadgeProgress;
+
+   // ISteamNews
+   GetNewsForApp=
+   GetNewsForApp
 
    // ISteamUser
    GetFriendList=

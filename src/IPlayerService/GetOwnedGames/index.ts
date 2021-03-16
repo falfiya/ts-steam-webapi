@@ -8,7 +8,7 @@ import {owned_game} from "./owned_game";
 import {owned_game_ex} from "./owned_game_ex";
 
 // stuff used inside the function
-import {IPlayerService} from "..";
+import {IPlayerService} from "../interface";
 import {opts_to_params} from "./options";
 import {api_method} from "../../api/api_method";
 const method = "GetOwnedGames" as api_method;

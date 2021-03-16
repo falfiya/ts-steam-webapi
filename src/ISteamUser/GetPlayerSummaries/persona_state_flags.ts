@@ -1,7 +1,7 @@
 export enum persona_state_flags {
-	has_rich_presence       = 2 ** 0,
-	in_joinable_game        = 2 ** 1,
-	golden                  = 2 ** 2,
+   has_rich_presence       = 2 ** 0,
+   in_joinable_game        = 2 ** 1,
+   golden                  = 2 ** 2,
    remote_play_together    = 2 ** 3,
    client_type_web         = 2 ** 8,
    client_type_mobile      = 2 ** 9,
