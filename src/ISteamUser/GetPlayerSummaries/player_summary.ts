@@ -1,16 +1,12 @@
 import {steam_id} from "../../shared/steam_id";
 
 import {community_visibility_state} from "./community_visibility_state";
-import {profile_has_been_configured} from "./profile_has_been_configured";
-
-import {avatar_hash} from "./avatar_hash";
 
 import {epoch} from "../../core/epoch";
 import {persona_state} from "./persona_state";
 import {clan_id} from "./clan_id";
 import {persona_state_flags} from "./persona_state_flags";
-import {avatar_hex_byte} from "./avatar_hex_byte";
-import {avatar} from "./avatar";
+import {avatar, avatar_hex_byte, avatar_hash} from "./avatar";
 import {user_url} from "../../shared/user_url";
 import {ih_steamcdn_akamihd} from "../../shared/image_hosts";
 
@@ -23,7 +19,7 @@ export type player_summary<
    steamid: id;
 
    communityvisibilitystate: community_visibility_state;
-   profilestate: profile_has_been_configured;
+   profilestate: 0 | 1;
    personaname: string;
    profileurl: user_url<id, vanity>;
 

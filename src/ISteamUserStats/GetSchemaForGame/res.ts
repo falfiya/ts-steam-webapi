@@ -12,6 +12,6 @@ type res = {
          stats: game_stat[];
       };
    };
-}
+};
 
 export = res;

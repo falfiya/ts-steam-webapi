@@ -1,5 +1,4 @@
-import {final} from "../core/final"
-import {unique_symbol, unwrap} from "../core/newtype";
+import {final, unique_symbol, unwrap} from "../core/newtype";
 import {http_host} from "./http_host";
 
 type image_host_t = {

@@ -1,5 +1,4 @@
-import {final} from "./final";
-import {unique_symbol} from "./newtype";
+import {final, unique_symbol} from "./newtype";
 import {uint} from "./data_types";
 
 type minutes_t = {

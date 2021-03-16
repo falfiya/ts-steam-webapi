@@ -1,5 +1,4 @@
-import {final} from "../core/final";
-import {unique_symbol} from "../core/newtype";
+import {final, unique_symbol} from "../core/newtype";
 
 type http_host_t = {
    [final]: "http_host",

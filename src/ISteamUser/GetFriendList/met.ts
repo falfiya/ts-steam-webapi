@@ -1,4 +1,4 @@
-import {isteam_session} from "../../shared/isteam_session";
+import {session} from "../../shared/session";
 import {steam_id} from "../../shared/steam_id";
 import {user_relationship} from "./user_relationship";
 
@@ -6,7 +6,7 @@ import {ISteamUser} from "../interface";
 import {api_method} from "../../api/api_method";
 const method = "GetFriendList" as api_method;
 
-async function GetFriendList(this: isteam_session, user: steam_id, relationship?: user_relationship) {
+async function GetFriendList(this: session, user: steam_id, relationship?: user_relationship) {
    var params = `steamid=${user}`;
 
    if (relationship) {

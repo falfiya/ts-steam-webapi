@@ -1,11 +1,11 @@
-import {isteam_session} from "../../shared/isteam_session";
+import {session} from "../../shared/session";
 import {steam_id} from "../../shared/steam_id";
 
 import {IPlayerService} from "../interface";
 import {api_method} from "../../api/api_method";
 const method = "GetBadges" as api_method;
 
-async function GetBadges(this: isteam_session, user: steam_id) {
+async function GetBadges(this: session, user: steam_id) {
    const params = `steamid=${user}`;
 
    const {response} = await this.api_call<import("./res")>(

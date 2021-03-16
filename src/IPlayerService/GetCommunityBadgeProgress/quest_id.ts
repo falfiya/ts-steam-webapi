@@ -1,5 +1,4 @@
-import {final} from "../../core/final";
-import {unique_symbol} from "../../core/newtype";
+import {final, unique_symbol} from "../../core/newtype";
 import {uint} from "../../core/data_types";
 
 type quest_id_t = {

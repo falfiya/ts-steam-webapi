@@ -1,7 +1,24 @@
+import {final, unique_symbol, unwrap} from "../../core/newtype";
 import {image_host} from "../../shared/image_host";
-import {avatar_hex_byte} from "./avatar_hex_byte";
-import {avatar_hash} from "./avatar_hash";
-import {unwrap} from "../../core/newtype";
+
+// while this is the-right-way to do it,
+// it destroys type hovering
+// type _hex =
+//    | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+//    | 'a' | 'b' | 'c' | 'd' | 'e' | 'f';
+// type _avatar_hex_byte = `${_hex}${_hex}`;
+
+type avatar_hex_byte_t = {
+   [final]: "avatar_hex_byte";
+   [unique_symbol]: avatar_hex_byte_t;
+};
+export type avatar_hex_byte = string & avatar_hex_byte_t
+
+type avatar_hash_t = {
+   [final]: "avatar_hash";
+   [unique_symbol]: avatar_hash_t;
+};
+export type avatar_hash = string & avatar_hash_t;
 
 export type avatar_size = "" | "_medium" | "_full";
 

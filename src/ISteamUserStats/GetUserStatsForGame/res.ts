@@ -7,7 +7,7 @@ type res = {
       gameName: string;
       steamID: steam_id;
       achievements: user_achievement[];
-      stats: user_stat[]
+      stats: user_stat[];
    };
 };
 

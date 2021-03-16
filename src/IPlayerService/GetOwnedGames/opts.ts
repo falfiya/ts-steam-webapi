@@ -1,6 +1,6 @@
 import {app_id} from "../../shared/app_id";
 
-export type GetOwnedGames_options = {
+export type opts = {
    /** @default false */
    include_appinfo?: boolean;
    /** @default false */
@@ -18,7 +18,7 @@ export type GetOwnedGames_options = {
  * This is a representation of how what Steam will interpret missing parameters
  * as.
  */
-export const GetOwnedGames_options_default: GetOwnedGames_options = {
+export const opts_default: opts = {
    include_appinfo: false,
    include_played_free_games: false,
    appids_filter: [],
@@ -26,7 +26,7 @@ export const GetOwnedGames_options_default: GetOwnedGames_options = {
    skip_unvetted_apps: false,
 };
 
-export function opts_to_params(opts: GetOwnedGames_options): string {
+export function opts_to_params(opts: opts): string {
    var params = "";
 
    const {

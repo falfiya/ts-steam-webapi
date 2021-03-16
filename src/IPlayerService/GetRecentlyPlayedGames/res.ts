@@ -1,10 +1,11 @@
-import {o_response} from "../../shared/o_response";
 import {uint} from "../../core/data_types";
-import {recently_played_game} from "./recently_played_game";
+import {game} from "../game";
 
-type res = o_response<{
-   total_count: uint;
-   games: recently_played_game[];
-}>;
+type res = {
+   response?: {
+      total_count: uint;
+      games: game[];
+   };
+};
 
 export = res;

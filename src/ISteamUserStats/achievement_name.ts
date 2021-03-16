@@ -1,5 +1,4 @@
-import {final} from "../core/final";
-import {unique_symbol} from "../core/newtype";
+import {final, unique_symbol} from "../core/newtype";
 
 type achievement_name_t = {
    [final]: "achievement_name";

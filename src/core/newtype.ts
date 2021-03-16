@@ -6,4 +6,7 @@ type unwrap<T extends unique_object> =
 
 type unwrap_maybe<T> = T extends unique_object ? unwrap<T> : T;
 
-export type {unique_symbol, unwrap, unwrap_maybe};
+/** unique symbol for the final purpose and usage of a newtype */
+declare const final: unique symbol;
+
+export type {unique_symbol, unwrap, unwrap_maybe, final};

@@ -1,4 +1,4 @@
-import {isteam_session} from "../../shared/isteam_session";
+import {session} from "../../shared/session";
 import {steam_id} from "../../shared/steam_id";
 
 import {ISteamUser} from "../interface";
@@ -16,7 +16,7 @@ function GetPlayerSummaries<A extends steam_id, B extends steam_id>
 function GetPlayerSummaries<A extends steam_id, B extends steam_id, C extends steam_id>
 (users: [A, B, C]): Promise<[player_summary<A>, player_summary<B>, player_summary<C>]>;
 
-async function GetPlayerSummaries(this: isteam_session, users: steam_id[]) {
+async function GetPlayerSummaries(this: session, users: steam_id[]) {
    const params = `steamids=${users.join(',')}`;
 
    const {response} = await this.api_call<import("./res")>(

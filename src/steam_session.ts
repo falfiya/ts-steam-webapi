@@ -1,4 +1,4 @@
-import {isteam_session} from "./shared/isteam_session";
+import {session} from "./shared/session";
 
 import {api_key} from "./api/api_key";
 import {api_call} from "./api/api_call";
@@ -28,7 +28,7 @@ import {GetPlayerAchievements} from "./ISteamUserStats/GetPlayerAchievements/met
 import {GetSchemaForGame} from "./ISteamUserStats/GetSchemaForGame/met";
 import {GetUserStatsForGame} from "./ISteamUserStats/GetUserStatsForGame/met";
 
-export class steam_session implements isteam_session {
+export class steam_session implements session {
    key: api_key;
 
    constructor (key: string) {

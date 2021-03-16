@@ -1,8 +1,14 @@
-import {o_response} from "../../shared/o_response";
-import {o_player_level} from "../o_player_level";
-import {o_badges} from "./o_badges";
-import {o_player_xp} from "./o_player_xp";
+import {uint} from "../../core/data_types";
+import {badge} from "./badge";
 
-type res = o_response<o_badges & o_player_xp & o_player_level>;
+type res = {
+   response?: {
+      badges: badge[];
+      player_xp: uint;
+      player_level: uint;
+      player_xp_needed_to_level_up: uint;
+      player_xp_needed_current_level: uint;
+   };
+};
 
 export = res;

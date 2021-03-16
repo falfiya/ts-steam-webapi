@@ -1,5 +1,4 @@
-import {final} from "./final";
-import {unique_symbol} from "./newtype";
+import {final, unique_symbol} from "./newtype";
 import {float} from "./data_types";
 
 type percent_t = {

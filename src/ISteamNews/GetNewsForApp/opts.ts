@@ -1,7 +1,7 @@
 import {epoch} from "../../core/epoch";
 import {uint} from "../../core/data_types";
 
-export type GetNewsForApp_options = {
+export type opts = {
    max_length?: uint;
    end_date?: epoch;
    count?: uint;
@@ -9,7 +9,7 @@ export type GetNewsForApp_options = {
    tags?: string[];
 };
 
-export const ISteamNews_options_default: GetNewsForApp_options = {
+export const opts_default: opts = {
    max_length: Infinity as uint,
    end_date: 0 as epoch,
    count: 20 as uint,
@@ -17,7 +17,7 @@ export const ISteamNews_options_default: GetNewsForApp_options = {
    tags: [],
 };
 
-export function opts_to_params(opts: GetNewsForApp_options): string {
+export function opts_to_params(opts: opts): string {
    var params = "";
 
    const {

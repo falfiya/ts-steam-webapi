@@ -1,5 +1,4 @@
-import {final} from "../core/final";
-import {unique_symbol} from "../core/newtype";
+import {final, unique_symbol} from "../core/newtype";
 
 type api_key_t = {
    [final]: "api_key";
