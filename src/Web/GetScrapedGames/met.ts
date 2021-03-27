@@ -14,7 +14,11 @@ Promise<scraped_game[]>
    const games_beg = html.indexOf(RG_GAMES_START) + RG_GAMES_START.length;
    const games_end = html.search(RG_GAMES_END);
    const games_dat = html.slice(games_beg, games_end);
-   return JSON.parse(games_dat);
+   try {
+      return JSON.parse(games_dat);
+   } catch (e) {
+      throw new Error(`Could not extract rgGames from html!\n${e}`);
+   }
 }
 
 export {GetScrapedGames};

@@ -14,7 +14,7 @@ async function GetUserGroupList(this: session, user: steam_id) {
    );
 
    if (response === undefined) {
-      throw new Error("GetUserGroupList: response is undefined!");
+      return [];
    }
 
    return response.groups;

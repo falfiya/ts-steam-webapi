@@ -12,7 +12,7 @@ export declare type scraped_game<id extends app_id = app_id> = {
     /** convertable to float */
     hours?: string;
     hours_forever: string;
-    last_played: epoch;
+    last_played?: epoch;
     client_summary: {
         state: string;
         status: string;

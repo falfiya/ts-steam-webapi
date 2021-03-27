@@ -17,7 +17,7 @@ async function GetGlobalAchievementPercentagesForApp(game_id: app_id) {
    );
 
    if (response === undefined) {
-      throw new Error("GetGlobalAchievementPercentagesForApp: response is undefined!");
+      return [];
    }
 
    return response.achievementpercentages.achievements;

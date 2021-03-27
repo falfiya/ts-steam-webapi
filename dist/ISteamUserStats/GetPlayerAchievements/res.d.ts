@@ -1,6 +1,6 @@
 import { steam_id } from "../../shared/steam_id";
 import { user_achievement_unlock } from "./user_achievement_unlock";
-declare type ok = {
+declare type player_stats = {
     gameName: string;
     steamID: steam_id;
     achievements: user_achievement_unlock[];
@@ -11,7 +11,7 @@ declare type err = {
     success: false;
 };
 export declare type res = {
-    playerstats: ok | err;
+    playerstats: player_stats | err;
 };
-export declare const is_err: (res: ok | err) => res is err;
+export declare const is_err: (res: player_stats | err) => res is err;
 export {};

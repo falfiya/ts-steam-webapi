@@ -44,7 +44,7 @@ Promise<(owned_game | owned_game_ex)[]>
    );
 
    if (response === undefined) {
-      throw new Error("GetOwnedGames: response is undefined!");
+      return [];
    }
 
    return response.games;

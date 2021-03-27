@@ -19,7 +19,7 @@ async function GetNewsForApp<id extends app_id>(app_id: id, opts?: opts) {
    const {appnews} = await api_call<res<id>>(ISteamNews, method, "v2", params);
 
    if (appnews == undefined) {
-      throw new Error("GetNewsForApp: appnews is undefined!");
+      return [];
    }
 
    return appnews.newsitems;

@@ -16,6 +16,8 @@ function GetPlayerSummaries<A extends steam_id, B extends steam_id>
 function GetPlayerSummaries<A extends steam_id, B extends steam_id, C extends steam_id>
 (users: [A, B, C]): Promise<[player_summary<A>, player_summary<B>, player_summary<C>]>;
 
+function GetPlayerSummaries(users: steam_id[]): Promise<player_summary[]>;
+
 async function GetPlayerSummaries(this: session, users: steam_id[]) {
    const params = `steamids=${users.join(',')}`;
 
@@ -27,7 +29,7 @@ async function GetPlayerSummaries(this: session, users: steam_id[]) {
    );
 
    if (response === undefined) {
-      throw new Error("GetPlayerSummaries: response is undefined!");
+      return [];
    }
 
    return response.players;

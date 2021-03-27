@@ -16,7 +16,7 @@ async function GetCommunityBadgeProgress(this: session, user: steam_id) {
    );
 
    if (response === undefined) {
-      throw new Error("GetCommunityBadgeProgress: response is undefined!");
+      return [];
    }
 
    return response.quests;

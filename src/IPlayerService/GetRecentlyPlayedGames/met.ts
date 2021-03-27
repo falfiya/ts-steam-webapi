@@ -20,7 +20,7 @@ async function GetRecentlyPlayedGames(this: session, user: steam_id, count?: uin
    );
 
    if (response === undefined) {
-      throw new Error("GetRecentlyPlayedGames: response is undefined!");
+      return [];
    }
 
    return response.games;
