@@ -1,7 +1,7 @@
-import {final, unique_symbol} from "../core/newtype";
+import {final, newtype} from "../core/newtype";
 
 type app_image_id_t = {
    [final]: "app_image_id";
-   [unique_symbol]: app_image_id_t;
+   [newtype]: app_image_id_t;
 };
 export type app_image_id = string & app_image_id_t;

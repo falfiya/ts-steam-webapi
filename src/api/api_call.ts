@@ -1,8 +1,17 @@
 import fetch from "node-fetch";
+import {unwrap, unwrap_maybe} from "../core/newtype";
 
 import {api_interface} from "./api_interface";
 import {api_method} from "./api_method";
 import {api_version} from "./api_version";
+
+function unwrap_val<T>(val: T): unwrap_maybe<T> {
+   return val as unwrap_maybe<T>;
+}
+
+declare const met: api_method;
+
+const url = `https://api.steampowered.com/${unwrap_val(met)}/` as const;
 
 async function api_call<T>
 (int: api_interface, met: api_method, ver: api_version, params: string): Promise<T>

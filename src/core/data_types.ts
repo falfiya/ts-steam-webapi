@@ -1,11 +1,11 @@
-import {unique_symbol} from "./newtype";
+import {newtype} from "./newtype";
 
 declare const data_type: unique symbol;
 
 // these are just to make hover-type less cluttered
-type uint_t  = {[data_type]: "uint" , [unique_symbol]: uint_t};
-type int_t   = {[data_type]: "int"  , [unique_symbol]: int_t};
-type float_t = {[data_type]: "float", [unique_symbol]: float_t};
+type uint_t  = {[data_type]: "uint" , [newtype]: uint_t};
+type int_t   = {[data_type]: "int"  , [newtype]: int_t};
+type float_t = {[data_type]: "float", [newtype]: float_t};
 
 type uint  = number & uint_t;
 type int   = number & int_t;

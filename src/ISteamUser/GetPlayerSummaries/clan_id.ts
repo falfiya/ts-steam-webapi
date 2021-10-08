@@ -1,8 +1,8 @@
-import {final, unique_symbol} from "../../core/newtype";
+import {final, newtype} from "../../core/newtype";
 
 type clan_id_t = {
    [final]: "clan_id";
-   [unique_symbol]: clan_id_t;
+   [newtype]: clan_id_t;
 };
 /**
  * String that when parsed, only the lowest 32 bits matter.
