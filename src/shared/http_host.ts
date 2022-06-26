@@ -1,8 +1,8 @@
-import {final, unique_symbol} from "../core/newtype";
+import {final, newtype} from "../core/newtype";
 
 type http_host_t = {
    [final]: "http_host",
-   [unique_symbol]: http_host_t;
+   [newtype]: http_host_t;
 };
 
 type http_host = `http${"" | "s"}://${string}` & http_host_t;

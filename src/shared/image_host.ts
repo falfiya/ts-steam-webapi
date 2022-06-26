@@ -1,9 +1,9 @@
-import {final, unique_symbol, unwrap} from "../core/newtype";
+import {final, newtype, unwrap} from "../core/newtype";
 import {http_host} from "./http_host";
 
 type image_host_t = {
    [final]: "image_host";
-   [unique_symbol]: image_host_t;
+   [newtype]: image_host_t;
 };
 
 const images = "steamcommunity/public/images";

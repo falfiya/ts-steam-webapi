@@ -1,9 +1,9 @@
-import {final, unique_symbol} from "./newtype";
+import {final, newtype} from "./newtype";
 import {uint} from "./data_types";
 
 type epoch_t = {
    [final]: "epoch";
-   [unique_symbol]: epoch_t;
+   [newtype]: epoch_t;
 };
 /** Unix Timestamp */
 type epoch = uint & epoch_t;
