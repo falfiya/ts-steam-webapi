@@ -4,7 +4,7 @@ import {game} from "../game";
 type res = {
    response?: {
       total_count: uint;
-      games: game[];
+      games?: game[];
    };
 };
 
